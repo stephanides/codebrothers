@@ -1,0 +1,34 @@
+body{margin: 0px;padding: 0px;overflow-x: hidden;background-color: #fefcf7;}
+ul{list-style-type: none;}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+*{font-family: 'Montserrat', sans-serif;background-color: white;}
+
+input {
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+.wrapper{overflow: hidden;}
+.header{position: fixed;padding-top: 40px;z-index: 20;padding-bottom: 40px;width: 100vw;}
+.header-nav{top: 0;left: 0;width: 100%;max-width: 1200px;margin-left: 50%;transform: translateX(-50%);}
+.logo-wrapper{width: 10vw;}
+.nav-wrapper{padding-right: 0;display: flex;padding-top: 20px;}
+.nav-wrapper .navMenu{display: flex;flex-wrap: wrap;}
+.nav-wrapper li{margin-right: 20px;font-size: 18px;font-weight: 600;}
+.nav-wrapper li a{cursor: pointer;}
+.nav-wrapper .lang{display: flex;flex-wrap: wrap;}
+.home{}
+.homeContent{max-width: 1200px;width: 1200px;margin-left: 50%;transform: translateX(-50%);}
+.home .phone{position: relative;right: -630px;margin-top: 118px;}
+.home h1{position: relative;top: 50vh;width: 45%;font-weight: 700;}
+.home strong{color: #20d7be;}
+.second{}
+.secondContent{max-width: 1200px;width: 1200px;margin-left: 50%;transform: translateX(-50%);display: inline-flex;}
+.second .pc{position: relative;left: -360px;}
+.second h1{position: relative;width: 45%;font-weight: 700;margin: 0;text-align: center;float:right;bottom: 50vh;}
+.second strong{color: #20d7be;}
