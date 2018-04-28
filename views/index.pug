@@ -1,0 +1,55 @@
+extends layout.pug
+
+block content
+
+    .wrapper
+      .header#section-0
+        .header-nav
+          .logo-wrapper.float-left(onclick="section(0)")
+            img(src="/assets/images/icons/logo_codebrothers.svg")
+          .nav-wrapper.float-right
+            ul.navMenu
+              li
+                a(onclick="section(2)") Naša práca
+              li
+                a(onclick="section(3)") Služby
+              li
+                a(onclick="section(4)") Referencie
+              li
+                a.shapeButton(onclick="section(5)") Kontaktuje nás
+            ul.lang
+              li
+                a SK
+              li
+                a EN
+      section.home#section-1
+        .homeContent
+          .typingText.active
+            h3 Čas sú peniaze, 
+            h3 preto #[strong rýchly web] zarába!#[strong.typewriter _]
+          .typingText
+            h3 Pridaj tempo svojmu webu
+            h3 a rozbehni #[strong biznis] na plné obrátky!#[strong.typewriter _]
+          .typingText
+            h3 Odlíš svoj web od konkurencie!
+            h3 Dopraj mu rýchle #[strong tempo]! #[strong.typewriter _]
+          .phone
+            img(src="assets/images/phone.png")
+          button.readmore.btn.btn-primary(onclick="section(2)") Chcem vedieť viac
+      section.second#section-2
+        .secondContent
+          .pc
+            img(src="assets/images/pc.png")
+          .questions
+            h3 Aj ty stihneš skočiť na obed a späť,<br> kým sa tvoj web načíta?
+            h3 Máš už plné zuby wordpressu a <br>podobných zastaraných systémov?
+            h3 Tvoji zákazníci sú nervózni zo <br>slimačieho tempa tvojho webu?
+            h3.highlight Získaj web s rýchlosťou svetla a<br>#[strong zvýš tempo svojho biznisu!]
+
+
+            
+
+block scripts
+    script(src="./assets/js/codebrothers.js")
+
+
