@@ -1,0 +1,278 @@
+$cbWhite: #fff;
+$cbBlack: #000;
+$cbLightBlue: #20d7be;
+
+@mixin p($place, $n) {
+  $m: ($n * 0.5);
+  
+  @if $place == "t" {
+    padding-top: $m + rem;
+  } @else if $place == "r" {
+    padding-right: $m + rem;
+  } @else if $place == "b" {
+    padding-bottom: $m + rem;
+  } @else if $place == "l" {
+    padding-left: $m + rem;
+  }
+}
+@mixin m($place, $n) {
+  $m: ($n * 0.5);
+
+  @if $place == "t" {
+    margin-top: $m + rem;
+  } @else if $place == "r" {
+    margin-right: $m + rem;
+  } @else if $place == "b" {
+    margin-bottom: $m + rem;
+  } @else if $place == "l" {
+    margin-left: $m + rem;
+  } @else {
+    margin: 0 auto;
+  }
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  background-color: $cbWhite;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $cbWhite;
+  width: 100%;
+  height: 100%;
+  
+  ul {
+    list-style-type: none;
+  }
+  input {
+    border-radius: 0;
+    -webkit-appearance: none;
+
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+#wrapper {
+  position: relative;
+  overflow: hidden;
+
+  header {
+    .logo {
+      img {
+        width: 115px;
+      }
+    }
+    nav {
+      ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+          float: left;
+          margin-right: .5rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+          &.btn-outline {
+            border: 2px solid $cbLightBlue;
+            border-radius: 0.3rem;
+            padding: .5rem .75rem;
+
+            &:hover {
+              background-color: $cbLightBlue;
+              
+              a {
+                color: $cbWhite;
+              }
+            }
+          }
+          a {
+            color: $cbBlack;
+            padding: .5rem;
+            font-weight: 600;
+
+            &:hover, &.active {
+              color: $cbLightBlue;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    height: 100vh;
+
+    #our-work {
+      .typingText {
+        display: none;
+      
+        &.active {
+          display: block;
+    
+          h3 {
+            position: relative;
+            white-space: nowrap;
+            width: 45%;
+            overflow: hidden;
+    
+            &:nth-child(1) {
+              animation: typing 8s steps(30, end);
+              animation-fill-mode: both;
+            }
+            &:nth-child(2) {
+              animation: typing2 8s steps(30, end);
+              animation-fill-mode: both;
+            }
+            .typewriter {
+              color: $cbBlack !important;
+              animation: blink-caret .75s step-end infinite;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes blink-caret {
+  from, to { color: transparent }
+  50% { color: black; }
+}
+@keyframes typing {
+  0% { width: 0% }
+  25% { width: 45% }
+  50% { width: 45% }
+  75% { width: 45% }
+  100% { width: 0% }    
+}
+@keyframes typing2 {
+  0% { width: 0% }
+  25% { width: 0% }
+  50% { width: 45% }
+  55% { width: 45% }
+  75% { width: 0% }
+  100% { width: 0% }    
+}
+
+.position-relative {
+  position: relative!important;
+}
+.position-absolute {
+  position: absolute!important;
+}
+
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+
+.m-auto {
+  @include m("auto", 0);
+}
+.mt-0 {
+  @include m("t", 0);
+}
+.mt-1 {
+  @include m("t", 1);
+}
+.mt-2 {
+  @include m("t", 2);
+}
+.mt-3 {
+  @include m("t", 3);
+}
+.mr-0 {
+  @include m("r", 0);
+}
+.mr-1 {
+  @include m("r", 1);
+}
+.mr-2 {
+  @include m("r", 2);
+}
+.mr-3 {
+  @include m("r", 3);
+}
+.mb-0 {
+  @include m("b", 0);
+}
+.mb-1 {
+  @include m("b", 1);
+}
+.mb-2 {
+  @include m("b", 2);
+}
+.mb-3 {
+  @include m("b", 3);
+}
+.mb-0 {
+  @include m("b", 0);
+}
+.mb-1 {
+  @include m("b", 1);
+}
+.mb-2 {
+  @include m("b", 2);
+}
+.mb-3 {
+  @include m("b", 3);
+}
+.pt-0 {
+  @include p("t", 0);
+}
+.pt-1 {
+  @include p("t", 1);
+}
+.pt-2 {
+  @include p("t", 2);
+}
+.pt-3 {
+  @include p("t", 3);
+}
+.pr-0 {
+  @include p("r", 0);
+}
+.pr-1 {
+  @include p("r", 1);
+}
+.pr-2 {
+  @include p("r", 2);
+}
+.pr-3 {
+  @include p("r", 3);
+}
+.pb-0 {
+  @include p("b", 0);
+}
+.pb-1 {
+  @include p("b", 1);
+}
+.pb-2 {
+  @include p("b", 2);
+}
+.pb-3 {
+  @include p("b", 3);
+}
+.pl-0 {
+  @include p("l", 0);
+}
+.pl-1 {
+  @include p("l", 1);
+}
+.pl-2 {
+  @include p("l", 2);
+}
+.pl-3 {
+  @include p("l", 3);
+}

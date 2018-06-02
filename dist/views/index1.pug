@@ -1,0 +1,36 @@
+extends layout.pug
+
+block content
+  #wrapper.container-fluid
+    header.d-flex.justify-content-between.pt-3.pb-3
+      .logo
+        img(src="./assets/images/icons/logo_codebrothers.svg")
+      nav
+        ul.d-flex.align-items-center
+          li
+            a(href="#our-work") Naša práca
+          li
+            a(href="services") Služby
+          li
+            a(href="ref") Referencie
+          li.btn-outline
+            a.btn-link(href="contact") Kontaktuje nás
+    
+    section#our-work
+      .row
+        .col-xl-6.position-relative.h-100
+          .position-absolute
+            .typingText.active
+              h3 Čas sú peniaze,
+              h3 preto #[strong rýchly web] zarába!#[strong.typewriter _]
+            .typingText
+              h3 Pridaj tempo svojmu webu
+              h3 a rozbehni #[strong biznis] na plné obrátky!#[strong.typewriter _]
+            .typingText
+              h3 Odlíš svoj web od konkurencie!
+              h3 Dopraj mu rýchle #[strong tempo]! #[strong.typewriter _]
+        .col-xl-6.position-relative.h-100
+          .position-absolute.shape.circle
+
+block scripts
+  script(src="./assets/js/codebrothers.min.js")

@@ -1,0 +1,34 @@
+{
+  "name": "codebrothers-web",
+  "version": "1.0.0",
+  "description": "New web for codebothers company",
+  "main": "cbserver.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "helmet": "^3.12.1",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uncss": "^1.0.6",
+    "morgan": "^1.9.0"
+  },
+  "scripts": {
+    "sass": "sass ./src/public/scss/style.scss ./dist/public/css/style.min.css --style compressed",
+    "start": "nodemon ./dist/server/cb-web.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephanides/codebrothers.git"
+  },
+  "author": "codebrothers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephanides/codebrothers/issues"
+  },
+  "homepage": "https://github.com/stephanides/codebrothers#readme"
+}
