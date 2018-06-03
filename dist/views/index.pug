@@ -6,35 +6,35 @@ block content
       .container.d-flex.justify-content-between.pt-2.pb-2
         .desktop.justify-content-between
           .logo
-            a.section-0(href="./1#")
-              img(src="./assets/images/icons/logo_codebrothers.svg" alt="codebrothers s. r. o.")
+            a.section-1(href="./#")
+              img(src="./assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
           nav
             ul.d-flex.align-items-center
+              //li
+                a.section-1(href="#our-work", title="Naša práca") Naša práca
               li
-                a.section-1(href="#our-work") Naša práca
+                a.section-3(href="#ref", title="Referencie") Referencie
               li
-                a.section-2(href="#services") Služby
+                a.section-4(href="#services", title="Služby") Služby              
               li
-                a.section-3(href="#ref") Referencie
-              li
-                a.section-4.btn-outline(href="#contact") Kontaktuje nás
+                a.section-5.btn-outline(href="#contact", title="Kontaktujte nás") Kontaktujte nás
         .mobile
           .logo
             a.section-0(href="./1#")
               img(src="./assets/images/icons/logo_codebrothers.svg" alt="codebrothers s. r. o.")
           nav
             ul.d-flex.align-items-center
+              //li
+                a.section-1(href="#our-work", title="Naša práca") Naša práca
               li
-                a.section-1(href="#our-work") Naša práca
+                a.section-3(href="#ref", title="Referencie") Referencie
               li
-                a.section-2(href="#services") Služby
+                a.section-2(href="#services", title="Služby") Služby              
               li
-                a.section-3(href="#ref") Referencie
-              li
-                a.section-4.btn-outline(href="#contact") Kontaktuje nás
+                a.section-4.btn-outline(href="#contact", , title="Kontaktujte nás") Kontaktuje nás
 
     .container
-      section#our-work.section-1
+      section#home.section-1
         .row
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center
             .fancy-text.position-relative
@@ -47,16 +47,15 @@ block content
               .typingText
                 h3 Odlíš svoj web od konkurencie!
                 h3 Dopraj mu rýchle #[strong tempo]! #[strong.typewriter _]
-              a.btn-outline.mt-2.section-2(href="#services") Chcem vedieť viac
+              a.btn-outline.mt-2.section-2(href="#services", title="Chcem vedieť viac") Chcem vedieť viac
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .phone.position-relative.margin-block
-              img(src="./assets/images/phone1.png" alt="")
+              img(src="./assets/images/phone1.png", alt="")
             .position-absolute.shape-circle
-      section#services.section-2
         .row
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .position-relative.pc.margin-block
-              img(src="./assets/images/pc1.png" alt="")
+              img(src="./assets/images/pc1.png", alt="")
             .shape-block.position-absolute
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center
             ul.position-relative.q-list.mt-2.mb-2
@@ -64,7 +63,6 @@ block content
               li Máš už plné zuby wordpressu a#[br]podobných zastaraných systémov?
               li Tvoji zákazníci sú nervózni zo#[br]slimačieho tempa tvojho webu?
               li Získaj web s rýchlosťou svetla a#[br]#[strong zvýš tempo svojho biznisu!]
-      section#ref.section-3
         .row
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center.bg-white
             ul.position-relative.q-list.success.mt-2.mb-2
@@ -76,9 +74,38 @@ block content
               li Spokojnosť kupujúcich porastie#[br]úmerne s rýchlosťou tvojho webu
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .position-relative.phone-2.margin-block
-              img.lazy(data-src="./assets/images/phone2.png" alt="")
+              img.lazy(data-src="./assets/images/phone2.png", alt="")
             .shape-triangle.position-absolute
-      section#production.section-4
+      
+      section#production.section-2
+        //.row
+          .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
+            .position-relative.pc.margin-block
+              img(src="./assets/images/pc1.png", alt="")
+            .shape-block.position-absolute
+          .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center
+            ul.position-relative.q-list.mt-2.mb-2
+              li Aj ty stihneš skočiť na obed a späť,#[br]kým sa tvoj web načíta?
+              li Máš už plné zuby wordpressu a#[br]podobných zastaraných systémov?
+              li Tvoji zákazníci sú nervózni zo#[br]slimačieho tempa tvojho webu?
+              li Získaj web s rýchlosťou svetla a#[br]#[strong zvýš tempo svojho biznisu!]
+      
+      section#ref.section-3
+        //.row
+          .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center.bg-white
+            ul.position-relative.q-list.success.mt-2.mb-2
+              li Získaš spoľahlivý web s rýchlosťou#[br]načítania do 1 sekundy
+              li Stúpne počet návštevníkov#[br]na tvojom eshope
+              li Preukázateľne sa ti zvýšia predaje#[br]aj o 50%
+              li Znížiš mieru okamžitých obchodov#[br]z tvojho webu aspoň o 10%
+              li Zákazníci na tvojej stránke strávia#[br]dlhší čas, a tak máš viac priestoru#[br]predávať
+              li Spokojnosť kupujúcich porastie#[br]úmerne s rýchlosťou tvojho webu
+          .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
+            .position-relative.phone-2.margin-block
+              img.lazy(data-src="./assets/images/phone2.png", alt="")
+            .shape-triangle.position-absolute
+      
+      section#services.section-4
         .row
           .col-12.mb-3
             h2.text-center.mb-2 Čo zahŕňa služba tvorby webov#[br]od #[strong Codebrothers]?
@@ -87,12 +114,12 @@ block content
           .col-12.cards
             .card.position-relative.pl-2.pr-2.pt-2.mb-2
               h3.strong.mb-2 Rýchly web na mieru
-              p Vytvoríme ti web založený na revolučných technológiách NodeJs a ReactJs.#[br]#[br]Už žiaden ťažkopádny Wordpress či Magenta. Prispôsobíme štruktúru a vizuál webu tvojim požiadavkám.
+              p Vytvoríme ti web založený na revolučných technológiách#[br]#[strong AngularJs #[i.fab.fa-angular.text-color-angular]], #[strong NodeJs #[i.fab.fa-node-js.text-color-node]], #[strong ReactJs #[i.fab.fa-react.text-color-react]] a ďalších.#[br]#[br]Nepoznávaš ich? Žiaden problém my im rozumieme skvelo!#[br]#[br]Už žiaden ťažkopádny Wordpress, Joomla či Magenta. Prispôsobíme štruktúru a vizuál webu tvojim požiadavkám.
               .icon.position-absolute
                 i.fas.fa-code.position-absolute
             .card.position-relative.pl-2.pr-2.pt-2.mb-2
               h3.strong.mb-2 Komplexný servis
-              p Ponúkame ti riešenie ako zvýšiť predaje skvalitnením tvojich stránok.#[br]#[br]Nielenže tvoj web dostane nový šat s rýchlosťou blesku, zabezpečíme ti aj texty, ktoré sú čerešničkou predaja.
+              p Ponúkame ti riešenie ako zvýšiť predaje skvalitnením tvojich stránok.#[br]#[br]Nielenže tvoj web dostane nový šat s rýchlosťou blesku #[i.fas.fa-bolt.text-color-bolt], zabezpečíme ti aj texty, ktoré sú čerešničkou predaja.
               .icon.position-absolute
                 i.fas.fa-handshake.position-absolute
             .card.position-relative.pl-2.pr-2.pt-2.mb-2
@@ -100,6 +127,20 @@ block content
               p Vyplň a odošli kontaktný formulár, čím si zabezpečíš 1. konzultáciu úplne zadarmo.#[br]#[br]Vypracujeme ti možnosti vylepšenia aj cenovú ponuku grátis.
               .icon.position-absolute
                 i.fas.fa-comments.position-absolute
+      
+      section#contact.section-5
+        form#contact-form
+          .row
+            .col-12
+              .form-row
+                label(for="name") Uvedťe svoje meno, alebo názov firmy
+                input#name(type="text", placeholder="Meno, alebo názov firmy")
+              .form-row
+                label(for="text") Popíšte nám svoju predstavu 
+                textarea#text(name="", cols="30", rows="10", placeholder="Popíšte nám svoju predstavu, či nápad, ktorý Vám môžeme pomôcť realizovať.\nAlebo sa nás len tak opýtajte na čokoľvek.")
+              .form-row.text-center
+                button(type="submit") Odoslať
+      
       footer.pt-2.pb-2.mt-5
           .row
             .col-6.d-flex.align-items-center
