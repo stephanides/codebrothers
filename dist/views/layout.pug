@@ -12,11 +12,13 @@ html
     link(rel="stylesheet" href="./assets/css/bootstrap-reboot.min.css" media="screen")
     link(rel="stylesheet" href="./assets/css/bootstrap-grid.min.css" media="screen")
     link(rel="stylesheet" href="./assets/css/style.min.css" media="screen")
+    link(rel="preload" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" as="style" onload="this.rel='stylesheet'")
     link(rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" as="style" onload="this.rel='stylesheet'")
     link(rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" as="style" onload="this.rel='stylesheet'")
     //- link(rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
     // When no javascript available
     noscript
+      link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css")
       link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700")
       link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700")        
     
@@ -28,6 +30,7 @@ html
     script(src="https://code.jquery.com/jquery-3.3.1.min.js" deffer)
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" deffer)
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" deffer)
+    script(src="./assets/js/jquery.lazy.min.js" deffer)
 
     block scripts
     

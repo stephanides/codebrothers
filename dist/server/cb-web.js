@@ -14,6 +14,5 @@ app.set("views", path.join(__dirname, "/../views"));
 app.set("view engine", "pug");
 
 app.get("/", function(req, res) { res.render("index"); });
-app.get("/1", function(req, res) { res.render("index1"); });
 
 app.listen(port, function() { console.log("Example app listening on port: " + port + "!"); });

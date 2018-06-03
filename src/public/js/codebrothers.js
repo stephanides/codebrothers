@@ -4,12 +4,23 @@ var activeText = 1;
 $(document).ready(function() {
   var typingTexts = document.querySelectorAll(".typingText");
   var svgImgs = document.querySelectorAll(".svg");
+  var navLinks = document.querySelectorAll("a"); // #wrapper header nav a
+
+  $('.lazy').lazy();
   
   for(var i = 0; i < typingTexts.length; i++) {
     texts.push(typingTexts[i]);
   }
 
-  console.log(texts);
+  [].forEach.call(navLinks, function(navLink) {
+    navLink.addEventListener("click", function(e) {
+      var sectionNum = parseInt(e.target.classList.item(0).split("-")[1]);
+      
+      if(sectionNum) {
+        section(sectionNum);
+      }
+    }, false);
+  });
 
   [].forEach.call(svgImgs, function(img) {
     var _img = img;
@@ -46,8 +57,6 @@ $(document).ready(function() {
       activeText = 0;
     }
   }, 8000);
-  
-  window.addEventListener("scroll", scroll, true);
 });
 
 function changeText(param) {
@@ -72,18 +81,8 @@ function myFetch(url, callback) {
   }
 }
 
-function scroll() {
-  var checkScroll = window.pageYOffset;
-  
-	if(checkScroll > 100){
-		document.getElementById("section-0").classList.add("headerScroll");
-	} else{
-		document.getElementById("section-0").classList.remove("headerScroll");
-	}
-}
-
 function section(e) {
   $('html, body').animate({
-    scrollTop:$("#section-" + e).position().top
+    scrollTop: $("section.section-" + e).position().top - $("header").height()
   }, 'slow');
 }

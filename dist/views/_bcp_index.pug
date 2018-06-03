@@ -1,0 +1,120 @@
+extends layout.pug
+
+block content
+  link(rel="stylesheet" href="./assets/css/codebrothers.css" media="screen")
+  .wrapper
+    .header#section-0
+      .header-nav
+        .logo-wrapper.float-left(onclick="section(0)")
+          img(src="./assets/images/icons/logo_codebrothers.svg")
+        .nav-wrapper.float-right
+          ul.navMenu
+            li
+              a(onclick="section(2)") Naša práca
+            li
+              a(onclick="section(3)") Služby
+            li
+              a(onclick="section(4)") Referencie
+            li
+              a.shapeButton(onclick="section(5)") Kontaktuje nás
+          ul.lang
+            li
+              a SK
+            li
+              a EN
+    section.home#section-1
+      .homeContent
+        .typingText.active
+          h3 Čas sú peniaze, 
+          h3 preto #[strong rýchly web] zarába!#[strong.typewriter _]
+        .typingText
+          h3 Pridaj tempo svojmu webu
+          h3 a rozbehni #[strong biznis] na plné obrátky!#[strong.typewriter _]
+        .typingText
+          h3 Odlíš svoj web od konkurencie!
+          h3 Dopraj mu rýchle #[strong tempo]! #[strong.typewriter _]
+        .phone
+          img(src="./assets/images/phone.png")
+        button.readmore.btn.btn-primary(onclick="section(2)") Chcem vedieť viac
+    section.second#section-2
+      .secondContent
+        .pc
+          img.lazy(data-src="./assets/images/pc.png")
+        .questions
+          .question
+            .mark
+            h3 Aj ty stihneš skočiť na obed a späť,<br> kým sa tvoj web načíta?
+          .question
+            .mark
+            h3 Máš už plné zuby wordpressu a <br>podobných zastaraných systémov?
+          .question
+            .mark
+            h3 Tvoji zákazníci sú nervózni zo <br>slimačieho tempa tvojho webu?
+          .question
+            .done
+            h3.highlight Získaj web s rýchlosťou svetla a<br>#[strong zvýš tempo svojho biznisu!]
+    section.third#section-3
+      .thirdContent
+        .phone2
+          img.lazy(data-src="./assets/images/phone2.png")
+        .benefits
+          .benefit
+            .mark
+            h3 Získaš spoľahlivý web s rýchlosťou načítania do 1 sekundy
+          .benefit
+            .mark
+            h3 Preukázateľne sa ti zvýšia predaje aj o 50%
+          .benefit
+            .mark
+            h3 Stúpne počet návštevníkov na tvojom eshope
+          .benefit
+            .mark
+            h3 Znížiš mieru okamžitých obchodov z tvojho webu aspoň o 10%
+          .benefit
+            .mark
+            h3 Zákazníci na tvojej stránke strávia dlhší čas, <br>a tak máš viac priestoru predávať
+          .benefit
+            .mark
+            h3 Spokojnosť kupujúcich porastie úmerne s rýchlosťou tvojho webu
+    section.products#section-4
+      .productsContent
+        h1 Čo zahŕňa služba tvorby webov<br> od #[strong  Codebrothers?]
+        p Vyberte si niektorú z naších sluežieb a obratom Vám napíšeme, <br> aby sme sa o Vašom projekte dozvedeli viac.
+        .row.choose
+          .col-md-3
+            h3 Rýchly web na mieru
+            p Vytvoríme ti web založený na revolučnej technológii NodeJs a ReactJs. Už žiaden ťažkopádny Wordpress či Magenta. Prispôsobíme štruktúru a vizuál webu tvojim požiadavkám.
+            .chooseicon
+              img.svg.web(src="./assets/images/icons/web.svg")
+          .col-md-3
+            h3 Komplexný servis
+            p Ponúkame ti riešenie ako zvýšiť predaje skvalitnením tvojich stránok. Nielenže tvoj web dostane nový šat s rýchlosťou blesku, zabezpečíme ti aj texty, ktoré sú čerešničkou predaja.
+            .chooseicon
+              img.svg.noweb(src="./assets/images/icons/service.svg")
+          .col-md-3
+            h3 Úvodná konzultácia zdarma
+            p Vyplň a odošli kontaktný formulár, čím si zabezpečíš 1. konzultáciu úplne zadarmo. Vypracujeme ti možnosti vylepšenia aj cenovú ponuku grátis.
+            .chooseicon
+              img.svg.noweb(src="./assets/images/icons/consultation.svg")
+        .consultation
+          button.readmore.btn.btn-primary(onclick="section(2)") Mám záujem o konzultáciu ZDARMA!
+    section.contact#section-5
+        .container
+          h2 Kontaktujte nás a získajte web s rýchlosťou svetla!
+          form
+            .form-group
+              label(for="name") Meno
+              input.form-control#name(type="name" placeholder="Vaše meno")
+            .form-group
+              label(for="surname") Priezvisko
+              input.form-control#surname(type="surname" placeholder="Vaše priezvisko")
+            .form-group
+              label(for="email") Email
+              input.form-control#email(type="email" placeholder="Váš email")
+            .form-group
+              label(for="message") Vaša správa
+              textarea.form-control#message(type="message" rows="5" placeholder="Priblížte nám Váš projekt a my Vám pomôžeme s jeho realizáciou.")
+            button.btn.btn-block(type="submit") Odoslať            
+
+block scripts
+  script(src="./assets/js/codebrothers.min.js")
