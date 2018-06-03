@@ -1,17 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
-const mongoose = require("mongoose");
+//import * as mongoose from 'mongoose';
 const path = require("path");
-const config_1 = require("./config");
+//import config from './config';
 const helmet = require("helmet");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+//import * as http from 'http';
+const email_router_1 = require("./routes/email.router");
 class App {
     constructor() {
         this.app = express();
-        this.mongoose = mongoose;
-        this.db = this.mongoose.connection;
+        //this.mongoose = mongoose;
+        //this.db = this.mongoose.connection;
         this.router = express.Router();
         this.config();
         this.routes();
@@ -20,11 +22,12 @@ class App {
     /*
     * Methode for establish connection with Mongo DB
     */
-    dbConnect() {
-        this.mongoose.connect(config_1.default.mongo);
-        this.db.on('error', console.error.bind(console, 'connection error:'));
-        this.db.once('open', () => console.log('Connected to db'));
-    }
+    /*private dbConnect(): void {
+      //this.mongoose.connect(config.mongo)
+  
+      this.db.on('error', console.error.bind(console, 'connection error:'))
+      this.db.once('open', () => console.log('Connected to db'))
+    }*/
     /*
    * Basic configuraiton of the application
    */
@@ -43,7 +46,7 @@ class App {
         this.app.set('view engine', 'pug');
         //this.app.locals.pretty = false; //False in production
         // Connect to DB
-        this.dbConnect();
+        //this.dbConnect()
     }
     /*
     * Methode for catch all errors from application
@@ -61,9 +64,9 @@ class App {
     */
     routes() {
         this.router.get('/', (req, res) => {
-            console.log("GET INDEX");
             res.render('index');
         });
+        this.app.use(email_router_1.default);
         this.app.use(this.router);
     }
 }

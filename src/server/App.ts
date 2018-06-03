@@ -1,22 +1,23 @@
 import * as express from 'express';
-import * as mongoose from 'mongoose';
+//import * as mongoose from 'mongoose';
 import * as path from 'path';
-import config from './config';
+//import config from './config';
 import * as helmet from 'helmet';
 import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
-import * as http from 'http';
+//import * as http from 'http';
+import emailRoute from "./routes/email.router";
 
 export class App {
   public app: express.Application
-  private db: mongoose.Connection
+  //private db: mongoose.Connection
   private mongoose
   private router: express.Router
   
   constructor() {
     this.app = express();
-    this.mongoose = mongoose;
-    this.db = this.mongoose.connection;
+    //this.mongoose = mongoose;
+    //this.db = this.mongoose.connection;
     this.router = express.Router();
 
     this.config();
@@ -27,12 +28,12 @@ export class App {
   /*
   * Methode for establish connection with Mongo DB
   */
-  private dbConnect(): void {
-    this.mongoose.connect(config.mongo)
+  /*private dbConnect(): void {
+    //this.mongoose.connect(config.mongo)
 
     this.db.on('error', console.error.bind(console, 'connection error:'))
     this.db.once('open', () => console.log('Connected to db'))
-  }
+  }*/
 
    /*
   * Basic configuraiton of the application
@@ -57,7 +58,7 @@ export class App {
     //this.app.locals.pretty = false; //False in production
         
     // Connect to DB
-    this.dbConnect()
+    //this.dbConnect()
   }
 
   /*
@@ -77,10 +78,10 @@ export class App {
   */
   private routes(): void {
     this.router.get('/', (req, res) => {
-      console.log("GET INDEX");
       res.render('index');
     });
 
+    this.app.use(emailRoute);
     this.app.use(this.router);
   }
 }

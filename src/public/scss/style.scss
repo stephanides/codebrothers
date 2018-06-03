@@ -10,7 +10,7 @@ $cbLightPurple: #9999ff;
 $cbDarkerPurple: #44165b;
 $cbSilver: #cccccc;
 
-$spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+$spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 $sides: (top, bottom, left, right);
 
 @mixin p($place, $n) {
@@ -302,10 +302,61 @@ body {
   75% { width: 0% }
   100% { width: 0% }    
 }
+@keyframes backgroundColorChange {
+  0% { background-color: $cbLightBlue; }
+  25% { background-color: $cbLightPurple; }
+  50% { background-color: $cbLightBlue; }
+  75% { background-color: $cbLightPurple; }
+  100% { background-color: $cbLightBlue; }
+}
 
-.bg-white { background-color: $cbWhite; }
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  .modal-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  .modal-dialog {
+    background-color: $cbWhite;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+
+    .modal-content {
+      .modal-header, .modal-body, .modal-footer {
+        padding: 1rem;
+      }
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+
+        .modal-title {
+          margin-bottom: 0;
+          line-height: 1.5;
+        }
+        .close {
+          padding: 1rem;
+          margin: -1rem -1rem -1rem auto;
+          background-color: transparent;
+          border: 0;
+          -webkit-appearance: none;
+          appearance: none;
+        }
+      }
+    }
+  }
+}
+
+.bg-white { background-color: $cbWhite!important; }
+.bg-animate { animation: backgroundColorChange 60s infinite; width: 105%; left: -2.5%; }
 .btn-outline {
-  background-color: transparent;
+  background-color: $cbWhite;
   border: 2px solid $cbLightBlue;
   display: inline-block;
   padding: .95rem .75rem!important;
@@ -319,6 +370,7 @@ body {
     text-decoration: none;
   }
 }
+.btn-large { padding: 1rem 1.5rem!important; }
 .cards {
   display: flex;
 
@@ -378,6 +430,7 @@ strong, .strong { color: $cbLightBlue; font-weight: 600; }
 .text-color-react { color: $cbReact; }
 .text-color-node { color: $cbNode; }
 .text-color-bolt { color: $cbBolt; }
+.text-color-white { color: $cbWhite; }
 
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {

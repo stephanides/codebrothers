@@ -1,6 +1,20 @@
 extends layout.pug
 
 block content
+  #responseModal.modal(tabindex="-1", role="dialog")
+    .modal-bg
+    .modal-dialog(role="document")
+      .modal-content
+        .modal-header
+          h5.modal-title Modal title
+          button.close(type="button", data-dismiss="modal", aria-label="Close")
+            span(aria-hidden="true") &times;
+        .modal-body
+          p Modal body text goes here.
+        .modal-footer
+          button.btn.btn-primary(type="button") Save changes
+          button.btn.btn-secondary(type="button", data-dismiss="modal") Close
+          
   #wrapper.container-fluid
     header.container-fluid.position-fixed
       .container.d-flex.justify-content-between.pt-2.pb-2
@@ -55,7 +69,7 @@ block content
         .row
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .position-relative.pc.margin-block
-              img(src="./assets/images/pc1.png", alt="")
+              img.lazy(data-src="./assets/images/pc1.png", alt="")
             .shape-block.position-absolute
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center
             ul.position-relative.q-list.mt-2.mb-2
@@ -105,7 +119,7 @@ block content
               img.lazy(data-src="./assets/images/phone2.png", alt="")
             .shape-triangle.position-absolute
       
-      section#services.section-4
+      section#services.section-4.mb-10
         .row
           .col-12.mb-3
             h2.text-center.mb-2 Čo zahŕňa služba tvorby webov#[br]od #[strong Codebrothers]?
@@ -114,7 +128,7 @@ block content
           .col-12.cards
             .card.position-relative.pl-2.pr-2.pt-2.mb-2
               h3.strong.mb-2 Rýchly web na mieru
-              p Vytvoríme ti web založený na revolučných technológiách#[br]#[strong AngularJs #[i.fab.fa-angular.text-color-angular]], #[strong NodeJs #[i.fab.fa-node-js.text-color-node]], #[strong ReactJs #[i.fab.fa-react.text-color-react]] a ďalších.#[br]#[br]Nepoznávaš ich? Žiaden problém my im rozumieme skvelo!#[br]#[br]Už žiaden ťažkopádny Wordpress, Joomla či Magenta. Prispôsobíme štruktúru a vizuál webu tvojim požiadavkám.
+              p Vytvoríme ti web založený na revolučných technológiách#[br]#[strong Angular #[i.fab.fa-angular.text-color-angular]], #[strong NodeJs #[i.fab.fa-node-js.text-color-node]], #[strong React #[i.fab.fa-react.text-color-react]] a ďalších.#[br]#[br]Nepoznávaš ich? Žiaden problém my im rozumieme skvelo!#[br]#[br]Už žiaden ťažkopádny Wordpress, Joomla či Magenta. Prispôsobíme štruktúru a vizuál webu tvojim požiadavkám.
               .icon.position-absolute
                 i.fas.fa-code.position-absolute
             .card.position-relative.pl-2.pr-2.pt-2.mb-2
@@ -124,30 +138,35 @@ block content
                 i.fas.fa-handshake.position-absolute
             .card.position-relative.pl-2.pr-2.pt-2.mb-2
               h3.strong.mb-2 Úvodná konzultácia zdarma
-              p Vyplň a odošli kontaktný formulár, čím si zabezpečíš 1. konzultáciu úplne zadarmo.#[br]#[br]Vypracujeme ti možnosti vylepšenia aj cenovú ponuku grátis.
+              p Vyplň a odošli kontaktný formulár, čím si zabezpečíš 1. konzultáciu úplne zadarmo.#[br]#[br]Vypracujeme ti možnosti vylepšenia aj cenovú ponuku grátis. #[i.fas.fa-gift.strong]
               .icon.position-absolute
                 i.fas.fa-comments.position-absolute
       
       section#contact.section-5
-        form#contact-form
+        h3.strong Kontaktujte nás
+        form#contact-form(onsubmit="submitForm(this)")
           .row
             .col-12
               .form-row
                 label(for="name") Uvedťe svoje meno, alebo názov firmy
-                input#name(type="text", placeholder="Meno, alebo názov firmy")
+                input#name(type="text", placeholder="Meno, alebo názov firmy", required)
               .form-row
-                label(for="text") Popíšte nám svoju predstavu 
-                textarea#text(name="", cols="30", rows="10", placeholder="Popíšte nám svoju predstavu, či nápad, ktorý Vám môžeme pomôcť realizovať.\nAlebo sa nás len tak opýtajte na čokoľvek.")
-              .form-row.text-center
-                button(type="submit") Odoslať
-      
-      footer.pt-2.pb-2.mt-5
-          .row
-            .col-6.d-flex.align-items-center
-              p.mb-0 CODEBROTHERS &copy; 2018. Všetky práva vyhradené.
-            .col-6
-              .logo.text-right
-                  img.lazy(data-src="./assets/images/icons/logo_codebrothers.svg" alt="codebrothers s. r. o.")
+                label(for="email") Uvedťe svoj e-mail
+                input#email(type="email", placeholder="E-mail", required)
+              .form-row.mb-5
+                label(for="text") Popíšte nám svoju predstavu
+                textarea#text(name="", cols="30", rows="10", placeholder="Popíšte nám svoju predstavu, či nápad, ktorý Vám môžeme pomôcť realizovať.\nAlebo sa nás len tak opýtajte na čokoľvek.", required)
+              .form-row.text-center.mb-0
+                button.btn-outline.btn-large(type="submit") Odoslať
+
+    .container-fluid
+      footer.pt-2.pb-2.mt-0
+        .row
+          .col-6.d-flex.align-items-center
+            p.mb-0 CODEBROTHERS &copy; 2018. Všetky práva vyhradené.
+          .col-6
+            .logo.text-right
+              img.lazy(data-src="./assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
 
 block scripts
   script(src="./assets/js/codebrothers.min.js")
