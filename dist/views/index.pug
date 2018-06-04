@@ -66,12 +66,14 @@ block content
               //a.btn-outline.mt-2.section-2(href="#services", title="Chcem vedieť viac") Chcem vedieť viac
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .phone.position-relative.margin-block
-              img(src="./assets/images/phone1.png", alt="")
+              picture
+                source(srcset="./assets/images/phone1.webp", alt="", type="image/webp")
+                img(src="./assets/images/phone1.png", alt="")
             .position-absolute.shape-circle
         .row
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .position-relative.pc.margin-block
-              img.lazy(data-src="./assets/images/pc1.png", alt="")
+              img.lazyload(data-srcset="./assets/images/pc1.webp, ./assets/images/pc1.png", alt="")
             .shape-block.position-absolute
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center
             ul.position-relative.q-list.mt-2.mb-2
@@ -90,7 +92,7 @@ block content
               li Spokojnosť kupujúcich porastie#[br]úmerne s rýchlosťou tvojho webu
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .position-relative.phone-2.margin-block
-              img.lazy(data-src="./assets/images/phone2.png", alt="")
+              img.lazyload(data-srcset="./assets/images/phone2.webp, ./assets/images/phone2.png", alt="")
             .shape-triangle.position-absolute
             
       section#services.section-2
@@ -124,9 +126,9 @@ block content
         .row
           .col-12.refs
            .position-relative.ref.mb-5
-             img.lazy(data-src="./assets/images/cw-logo.png" alt="")
+              img.lazyload(data-srcset="./assets/images/cw-logo.webp, ./assets/images/cw-logo.png", alt="")
            .position-relative.ref.mb-5
-             img.lazy(data-src="./assets/images/bk-logo.png" alt="")
+              img.lazyload(data-srcset="./assets/images/bk-logo.webp, ./assets/images/bk-logo.png", alt="")
            //.position-relative.ref
              img.lazy(data-src="./assets/images/cw-logo.png" alt="")
 
@@ -155,7 +157,7 @@ block content
             p.mb-0 CODEBROTHERS &copy; 2018. Všetky práva vyhradené.#[br]#[a(href="mailto:info@codebrothers.sk" title="Odoslať email") info@codebrothers.sk]
           .col-6
             .logo.text-right
-              img.lazy(data-src="./assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
+              img.lazyload(data-srcset="./assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
 
 block scripts
   script(src="./assets/js/codebrothers.min.js")

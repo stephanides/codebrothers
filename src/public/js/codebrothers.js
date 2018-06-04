@@ -18,7 +18,7 @@ $(document).ready(function() {
 
   startTextTyping();
 
-  $(".lazy").lazy();
+  //$(".lazy").lazy();
 
   [].forEach.call(navLinks, function(navLink) {   
     navLink.addEventListener("click", function(e) {
