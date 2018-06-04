@@ -73,7 +73,9 @@ block content
         .row
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .position-relative.pc.margin-block
-              img.lazyload(data-srcset="./assets/images/pc1.webp, ./assets/images/pc1.png", alt="")
+              picture
+                source(data-srcset="./assets/images/pc1.webp", alt="", type="image/webp")
+                img.lazyload(data-src="./assets/images/pc1.png", alt="")
             .shape-block.position-absolute
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center
             ul.position-relative.q-list.mt-2.mb-2
@@ -92,7 +94,9 @@ block content
               li Spokojnosť kupujúcich porastie#[br]úmerne s rýchlosťou tvojho webu
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .position-relative.phone-2.margin-block
-              img.lazyload(data-srcset="./assets/images/phone2.webp, ./assets/images/phone2.png", alt="")
+              picture
+                source(data-srcset="./assets/images/phone2.webp", type="image/webp")
+                img.lazyload(data-src="./assets/images/phone2.png", alt="")
             .shape-triangle.position-absolute
             
       section#services.section-2
@@ -126,11 +130,15 @@ block content
         .row
           .col-12.refs
            .position-relative.ref.mb-5
-              img.lazyload(data-srcset="./assets/images/cw-logo.webp, ./assets/images/cw-logo.png", alt="")
+              picture
+                source(data-srcset="./assets/images/cw-logo.webp" type="image/webp")
+                img.lazyload(data-src="./assets/images/cw-logo.png", alt="")
            .position-relative.ref.mb-5
-              img.lazyload(data-srcset="./assets/images/bk-logo.webp, ./assets/images/bk-logo.png", alt="")
+              picture
+                source(data-srcset="./assets/images/bk-logo.webp" type="image/webp")
+                img.lazyload(data-src="./assets/images/bk-logo.png", alt="")
            //.position-relative.ref
-             img.lazy(data-src="./assets/images/cw-logo.png" alt="")
+             img(data-src="./assets/images/cw-logo.png" alt="")
 
       // Hidden till time when we will have GDPR processed
       //section#contact.section-4
@@ -157,7 +165,7 @@ block content
             p.mb-0 CODEBROTHERS &copy; 2018. Všetky práva vyhradené.#[br]#[a(href="mailto:info@codebrothers.sk" title="Odoslať email") info@codebrothers.sk]
           .col-6
             .logo.text-right
-              img.lazyload(data-srcset="./assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
+                img.lazyload(data-src="./assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
 
 block scripts
   script(src="./assets/js/codebrothers.min.js")
