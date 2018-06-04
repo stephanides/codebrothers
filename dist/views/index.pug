@@ -1,19 +1,18 @@
 extends layout.pug
 
 block content
-  #responseModal.modal(tabindex="-1", role="dialog")
+  #responseModal.modal.fade.hide(tabindex="-1", role="dialog")
     .modal-bg
     .modal-dialog(role="document")
       .modal-content
         .modal-header
-          h5.modal-title Modal title
+          h5.modal-title Informácia
           button.close(type="button", data-dismiss="modal", aria-label="Close")
             span(aria-hidden="true") &times;
         .modal-body
-          p Modal body text goes here.
-        .modal-footer
-          button.btn.btn-primary(type="button") Save changes
-          button.btn.btn-secondary(type="button", data-dismiss="modal") Close
+          p
+        .modal-footer.text-right
+          button.btn.btn-secondary(type="button", data-dismiss="modal") Zavrieť
           
   #wrapper.container-fluid
     header.container-fluid.position-fixed
@@ -92,32 +91,8 @@ block content
             .shape-triangle.position-absolute
       
       section#production.section-2
-        //.row
-          .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
-            .position-relative.pc.margin-block
-              img(src="./assets/images/pc1.png", alt="")
-            .shape-block.position-absolute
-          .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center
-            ul.position-relative.q-list.mt-2.mb-2
-              li Aj ty stihneš skočiť na obed a späť,#[br]kým sa tvoj web načíta?
-              li Máš už plné zuby wordpressu a#[br]podobných zastaraných systémov?
-              li Tvoji zákazníci sú nervózni zo#[br]slimačieho tempa tvojho webu?
-              li Získaj web s rýchlosťou svetla a#[br]#[strong zvýš tempo svojho biznisu!]
       
       section#ref.section-3
-        //.row
-          .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center.bg-white
-            ul.position-relative.q-list.success.mt-2.mb-2
-              li Získaš spoľahlivý web s rýchlosťou#[br]načítania do 1 sekundy
-              li Stúpne počet návštevníkov#[br]na tvojom eshope
-              li Preukázateľne sa ti zvýšia predaje#[br]aj o 50%
-              li Znížiš mieru okamžitých obchodov#[br]z tvojho webu aspoň o 10%
-              li Zákazníci na tvojej stránke strávia#[br]dlhší čas, a tak máš viac priestoru#[br]predávať
-              li Spokojnosť kupujúcich porastie#[br]úmerne s rýchlosťou tvojho webu
-          .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
-            .position-relative.phone-2.margin-block
-              img.lazy(data-src="./assets/images/phone2.png", alt="")
-            .shape-triangle.position-absolute
       
       section#services.section-4.mb-10
         .row

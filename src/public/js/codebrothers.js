@@ -1,9 +1,11 @@
 var texts = [];
 var activeText = 1;
+var modal = document.getElementById("responseModal");
 
 $(document).ready(function() {
   var typingTexts = document.querySelectorAll(".typingText");
   var navLinks = document.querySelectorAll("a");
+  var closeModalBtns = modal.querySelectorAll("button");
 
   $(".lazy").lazy();
   
@@ -18,6 +20,10 @@ $(document).ready(function() {
       handleLink(el);
     }, false);
   });
+  [].forEach.call(closeModalBtns, function(closeModalBtn) {
+    closeModalBtn.addEventListener("click", handleModalOff, false);
+  });
+  modal.addEventListener("click", handleModalOff, false);
 
   window.setInterval(function() {
     changeText(activeText);
@@ -56,9 +62,14 @@ function handleLink(el) {
   }
 }
 
-function section(e) {
-  console.log("GOT TO SECTION: ", e);
+function handleModalOff() {
+  modal.classList.replace("show", "hide");
+  setTimeout(function() {
+    modal.classList.remove("z-modal");
+  }, 300);
+}
 
+function section(e) {
   $("html, body").animate({
     scrollTop: document.querySelector("section.section-" + e).offsetTop - document.getElementsByTagName("header")[0].offsetHeight
   }, "slow");
@@ -78,10 +89,18 @@ function submitForm(e) {
     type: "POST",
     data: data,
     success: function(resp) {
-      console.log(resp);
+      if(modal && !modal.classList.contains("show")) {
+        modal.querySelector("p").innerHTML = "Vaša správa bola úspešne odoslaná.\nČoskoro sa Vám ozveme s odpoveďou.";
+        modal.classList.replace("hide", "show");
+        modal.classList.add("z-modal");
+      }
     },
     error: function(err) {
-      console.log(err);
+      if(modal && !modal.classList.contains("show")) {
+        modal.querySelector("p").innerHTML = "Došlo k chybe. Vášu správa sa nepodarilo odoslať.\nSkúste neskôr prosím.";
+        modal.classList.replace("hide", "show");
+        modal.classList.add("z-modal");
+      }
     }
   });
 }
