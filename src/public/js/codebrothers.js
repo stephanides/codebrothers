@@ -1,16 +1,16 @@
 var texts = [];
-var activeText = 1;
-var modal = document.getElementById("responseModal");
+var typingTexts = document.querySelectorAll(".typingText");
+var activeText = 0;
 var textTypingInterval = 0;
+var modal = document.getElementById("responseModal");
 var shapeBlock = document.getElementsByClassName("shape-block")[0];
+var navLinks = document.querySelectorAll("a");
+var closeModalBtns = modal.querySelectorAll("button");
 var mobileNav = document.querySelector(".mobile");
 var mobileNavBtn = mobileNav.querySelector(".nav-btn button");
 var mobileNavLinks = mobileNav.querySelectorAll("nav ul li a");
 
 $(document).ready(function() {
-  var typingTexts = document.querySelectorAll(".typingText");
-  var navLinks = document.querySelectorAll("a");
-  var closeModalBtns = modal.querySelectorAll("button");
 
   for(var i = 0; i < typingTexts.length; i++) {
     texts.push(typingTexts[i]);
@@ -55,8 +55,7 @@ $(document).ready(function() {
   window.addEventListener("scroll", function() {
     if(shapeBlock.getBoundingClientRect().top < 200) {
       if(textTypingInterval > 0) {
-        window.clearInterval(textTypingInterval);
-        textTypingInterval = 0;
+        stopTextTyping();
       }
     } else if(textTypingInterval === 0) {
       startTextTyping();
@@ -98,16 +97,26 @@ function handleModalOff() {
 }
 
 function startTextTyping() {
+  typingTexts[activeText].classList.add("active");
+
   textTypingInterval = window.setInterval(function() {
-    console.log("INTERVAL STARTED");
-    changeText(activeText);
-    
     activeText++;
     
     if (activeText === 3) {
       activeText = 0;
     }
+
+    changeText(activeText);
   }, 8000);
+}
+
+function stopTextTyping() {
+  window.clearInterval(textTypingInterval);
+  textTypingInterval = 0;
+  
+  if(typingTexts[activeText].classList.contains("active")) {
+    typingTexts[activeText].classList.remove("active");
+  }
 }
 
 function section(e) {
