@@ -3,29 +3,55 @@ var activeText = 1;
 var modal = document.getElementById("responseModal");
 var textTypingInterval = 0;
 var shapeBlock = document.getElementsByClassName("shape-block")[0];
+var mobileNav = document.querySelector(".mobile");
+var mobileNavBtn = mobileNav.querySelector(".nav-btn button");
+var mobileNavLinks = mobileNav.querySelectorAll("nav ul li a");
 
 $(document).ready(function() {
   var typingTexts = document.querySelectorAll(".typingText");
   var navLinks = document.querySelectorAll("a");
   var closeModalBtns = modal.querySelectorAll("button");
 
-  $(".lazy").lazy();
-  
   for(var i = 0; i < typingTexts.length; i++) {
     texts.push(typingTexts[i]);
   }
+
+  startTextTyping();
+
+  $(".lazy").lazy();
 
   [].forEach.call(navLinks, function(navLink) {   
     navLink.addEventListener("click", function(e) {
       var el = e.target;
 
+      if($(el).closest(".mobile")) {
+        mobileNavBtn.classList.remove("active");
+        mobileNavBtn.querySelector("i").classList.replace("fa-align-left", "fa-align-right");
+        document.querySelector(".mobile nav").classList.replace("d-block", "d-none");
+      }
+
       handleLink(el);
     }, false);
   });
+  
   [].forEach.call(closeModalBtns, function(closeModalBtn) {
     closeModalBtn.addEventListener("click", handleModalOff, false);
   });
+  
   modal.addEventListener("click", handleModalOff, false);
+
+  mobileNavBtn.addEventListener("click", function(e) {
+    if(!mobileNavBtn.classList.contains("active")) {
+      mobileNavBtn.classList.add("active");
+      mobileNavBtn.querySelector("i").classList.replace("fa-align-right", "fa-align-left");
+      document.querySelector(".mobile nav").classList.replace("d-none", "d-block");
+    } else {
+      mobileNavBtn.classList.remove("active");
+      mobileNavBtn.querySelector("i").classList.replace("fa-align-left", "fa-align-right");
+      document.querySelector(".mobile nav").classList.replace("d-block", "d-none");
+    }
+  }, false);
+
   window.addEventListener("scroll", function() {
     if(shapeBlock.getBoundingClientRect().top < 200) {
       if(textTypingInterval > 0) {
@@ -36,8 +62,6 @@ $(document).ready(function() {
       startTextTyping();
     }
   }, false);
-
-  startTextTyping();
 });
 
 function changeText(param) {
