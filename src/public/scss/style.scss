@@ -535,6 +535,16 @@ strong, .strong { color: $cbLightBlue; font-weight: 600; }
   }
 }
 
+@media only screen and (min-width : 768px) and (orientation: landscape)  {
+  #wrapper {
+    section {
+      &#ref {
+        height: calc(100vh - 115px);
+      }
+    }
+  }
+}
+
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
   #wrapper {
@@ -614,16 +624,6 @@ strong, .strong { color: $cbLightBlue; font-weight: 600; }
       }
       &:last-child {
         margin-right: 0;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width : 768px) and (orientation: landscape)  {
-  #wrapper {
-    section {
-      &#ref {
-        height: calc(100vh - 115px);
       }
     }
   }
