@@ -1,6 +1,8 @@
 var texts = [];
 var activeText = 1;
 var modal = document.getElementById("responseModal");
+var textTypingInterval = 0;
+var shapeBlock = document.getElementsByClassName("shape-block")[0];
 
 $(document).ready(function() {
   var typingTexts = document.querySelectorAll(".typingText");
@@ -24,16 +26,18 @@ $(document).ready(function() {
     closeModalBtn.addEventListener("click", handleModalOff, false);
   });
   modal.addEventListener("click", handleModalOff, false);
-
-  window.setInterval(function() {
-    changeText(activeText);
-    
-    activeText++;
-    
-    if (activeText === 3) {
-      activeText = 0;
+  window.addEventListener("scroll", function() {
+    if(shapeBlock.getBoundingClientRect().top < 200) {
+      if(textTypingInterval > 0) {
+        window.clearInterval(textTypingInterval);
+        textTypingInterval = 0;
+      }
+    } else if(textTypingInterval === 0) {
+      startTextTyping();
     }
-  }, 8000);
+  }, false);
+
+  startTextTyping();
 });
 
 function changeText(param) {
@@ -67,6 +71,19 @@ function handleModalOff() {
   setTimeout(function() {
     modal.classList.remove("z-modal");
   }, 300);
+}
+
+function startTextTyping() {
+  textTypingInterval = window.setInterval(function() {
+    console.log("INTERVAL STARTED");
+    changeText(activeText);
+    
+    activeText++;
+    
+    if (activeText === 3) {
+      activeText = 0;
+    }
+  }, 8000);
 }
 
 function section(e) {

@@ -23,13 +23,12 @@ block content
               img(src="./assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
           nav
             ul.d-flex.align-items-center
-              //li
-                a.section-1(href="#our-work", title="Naša práca") Naša práca
+              li
+                a.section-4(href="#services", title="Služby") Služby
               li
                 a.section-3(href="#ref", title="Referencie") Referencie
-              li
-                a.section-4(href="#services", title="Služby") Služby              
-              li
+              // Hidden till time when we will have GDPR processed        
+              //li
                 a.section-5.btn-outline(href="#contact", title="Kontaktujte nás") Kontaktujte nás
         .mobile
           .logo
@@ -37,13 +36,12 @@ block content
               img(src="./assets/images/icons/logo_codebrothers.svg" alt="codebrothers s. r. o.")
           nav
             ul.d-flex.align-items-center
-              //li
-                a.section-1(href="#our-work", title="Naša práca") Naša práca
+              li
+                a.section-2(href="#services", title="Služby") Služby
               li
                 a.section-3(href="#ref", title="Referencie") Referencie
-              li
-                a.section-2(href="#services", title="Služby") Služby              
-              li
+              // Hidden till time when we will have GDPR processed           
+              //li
                 a.section-4.btn-outline(href="#contact", , title="Kontaktujte nás") Kontaktuje nás
 
     .container
@@ -60,7 +58,7 @@ block content
               .typingText
                 h3 Odlíš svoj web od konkurencie!
                 h3 Dopraj mu rýchle #[strong tempo]! #[strong.typewriter _]
-              a.btn-outline.mt-2.section-2(href="#services", title="Chcem vedieť viac") Chcem vedieť viac
+              //a.btn-outline.mt-2.section-2(href="#services", title="Chcem vedieť viac") Chcem vedieť viac
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .phone.position-relative.margin-block
               img(src="./assets/images/phone1.png", alt="")
@@ -117,7 +115,8 @@ block content
               .icon.position-absolute
                 i.fas.fa-comments.position-absolute
       
-      section#contact.section-5
+      // Hidden till time when we will have GDPR processed
+      //section#contact.section-5
         h3.strong Kontaktujte nás
         form#contact-form(onsubmit="submitForm(this)")
           .row
