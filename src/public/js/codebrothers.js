@@ -11,14 +11,13 @@ var mobileNavBtn = mobileNav.querySelector(".nav-btn button");
 var mobileNavLinks = mobileNav.querySelectorAll("nav ul li a");
 
 $(document).ready(function() {
+  mixpanel.track("Page Visit");
 
   for(var i = 0; i < typingTexts.length; i++) {
     texts.push(typingTexts[i]);
   }
 
   startTextTyping();
-
-  //$(".lazy").lazy();
 
   [].forEach.call(navLinks, function(navLink) {   
     navLink.addEventListener("click", function(e) {
