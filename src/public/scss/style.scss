@@ -407,8 +407,8 @@ body {
 .show { opacity: 1 }
 .hide { opacity: 0; }
 .z-modal { z-index: 10; }
-img { opacity: 1; transition: opacity .3s; }
-img[data-srcset]{ opacity: 0; }
+img[data-src] { opacity: 0; }
+img.lazyloaded { opacity: 1; transition: opacity .3s; }
 .position-absolute { position: absolute!important; }
 .position-fixed { position: fixed!important; }
 .position-relative { position: relative!important; }
