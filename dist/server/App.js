@@ -66,6 +66,18 @@ class App {
         this.router.get('/', (req, res) => {
             res.render('index');
         });
+        this.router.get('/blog/:item', (req, res) => {
+            console.log("BLOG ITEM");
+            const pageNum = req.params.item.indexOf("1") > -1 ?
+                1 : (req.params.item.indexOf("2") > -1 ?
+                2 :
+                (req.params.item.indexOf("3") > -1 ?
+                    3 : 1));
+            res.render('blog-item', { page: 'blog', blogId: pageNum });
+        });
+        this.router.get('/blog', (req, res) => {
+            res.render('blog-list', { page: 'blog' });
+        });
         this.app.use(email_router_1.default);
         this.app.use(this.router);
     }

@@ -9,9 +9,15 @@ gulp.task("minify-js", function() {
   return stream;
 });
 
-gulp.task("watch:js", function() {
-  gulp.watch("./src/public/js/*.js", ["default"]);
+gulp.task("script:watch", function() {
+  gulp.watch("./src/public/js/*.js", gulp.series("minify-js")); // ["default"]
 });
+
+/*gulp.task("sass", function() {
+  var sassStream = gulp.src("./src/public/scss/*.scss").pipe(sass({outputStyle: 'compressed'}))
+  .pipe(rename({ extname: ".min.css" })).pipe(gulp.dest("./dist/public/css/"));
+  return sassStream;
+});*/
 
 gulp.task("sass", function() {
   var sassStream = gulp.src("./src/public/scss/*.scss").pipe(sass({outputStyle: 'compressed'}))
@@ -20,7 +26,7 @@ gulp.task("sass", function() {
 });
 
 gulp.task("sass:watch", function() {
-  gulp.watch("./src/public/scss/*.scss", ["sass"]);
+  gulp.watch("./src/public/scss/*.scss", gulp.series("sass"));
 });
 
 /*gulp.task("uncss:css", function() {
@@ -29,4 +35,4 @@ gulp.task("sass:watch", function() {
   })).pipe(gulp.dest("./dist/public/css"));
 });*/
 
-gulp.task("default", ["minify-js", "watch:js", "sass:watch"]); // "uncss:css"
+// gulp.task("default", ["minify-js", "watch:js", "sass:watch"]); // "uncss:css"

@@ -34,7 +34,7 @@
     "@types/react": "^16.3.16",
     "@types/react-dom": "^16.0.5",
     "awesome-typescript-loader": "^5.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.0",
@@ -46,6 +46,8 @@
   },
   "scripts": {
     "gulp": "gulp",
+    "gulp-sass": "gulp sass:watch",
+    "gulp-script": "gulp script:watch",
     "sass": "sass ./src/public/scss/style.scss ./dist/public/css/style.min.css --style compressed",
     "start": "nodemon ./dist/server/cb-web.js",
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -10,6 +10,8 @@ $cbReact: #61dafb;
 $cbLightPurple: #9999ff;
 $cbDarkerPurple: #44165b;
 $cbSilver: #cccccc;
+$cbLightSilver: #ececec;
+$cbBlog: #ffc107;
 
 $spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 $sides: (top, bottom, left, right);
@@ -245,6 +247,63 @@ body {
       margin-top: 5rem!important;
       margin-bottom: 5rem!important;
     }
+    .blog-item {
+      &:hover {
+        aside {
+          border: 2px solid $cbAngular;
+        }
+      }
+      aside {
+        width: 8rem;
+        border: 2px solid $cbWhite;
+        border-radius: 50%;
+        width: 128px;
+        height: 128px;
+        overflow: hidden;
+
+        &.borderless {
+          border-radius: 0;
+        }
+        picture {
+          img {
+            width: 100%;
+          }
+        }
+      }
+      p {
+        &:last-child {
+          margin-left: 8rem;
+        }
+
+        a {
+          &.link {
+            color: $cbDarkerBlue;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .buy {
+      background-color: #f6fffc;
+      padding: 1rem;
+      border: 1px solid $cbLightSilver;
+      margin: 2rem 0;
+
+      button {
+        background-color: $cbLightBlue;
+        border: 0 none;
+        color: $cbWhite;
+        font-weight: bold;
+        padding: .75rem 1rem;
+
+        &:hover {
+          background-color: $cbDarkerBlue;
+        }
+      }
+      p {
+        font-weight: 500;
+      }
+    }
   }
   footer {
     border-top: 1px solid $cbSilver;
@@ -403,6 +462,7 @@ body {
     }
   }
 }
+.clearfix { clear: both; }
 .fade { transition: opacity .3s linear; }
 .show { opacity: 1 }
 .hide { opacity: 0; }
@@ -413,6 +473,8 @@ img.lazyloaded { opacity: 1; transition: opacity .3s; }
 .position-fixed { position: fixed!important; }
 .position-relative { position: relative!important; }
 strong, .strong { color: $cbLightBlue; font-weight: 600; }
+.float-left { float: left; }
+.float-right { float: right; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .w-100 { width: 100%; }
@@ -438,6 +500,8 @@ strong, .strong { color: $cbLightBlue; font-weight: 600; }
 .text-color-node { color: $cbNode; }
 .text-color-bolt { color: $cbBolt; }
 .text-color-white { color: $cbWhite; }
+.text-color-blog { color: $cbBlog; }
+.text-color-cb { color: $cbDarkerBlue; }
 
 /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
@@ -490,6 +554,19 @@ strong, .strong { color: $cbLightBlue; font-weight: 600; }
               width: 150px;
             }
           }
+        }
+      }
+      .picture-full-wide {
+        position: relative;
+        width: 100%;
+        height: 40vh;
+        overflow: hidden;
+        img {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-40%);
+          width: 100%;
         }
       }
     }

@@ -1,0 +1,63 @@
+extends layout.pug
+
+block content
+  #responseModal.modal.fade.hide(tabindex="-1", role="dialog")
+    .modal-bg
+    .modal-dialog(role="document")
+      .modal-content
+        .modal-header
+          h5.modal-title Informácia
+          button.close(type="button", data-dismiss="modal", aria-label="Close")
+            span(aria-hidden="true") &times;
+        .modal-body
+          p
+        .modal-footer.text-right
+          button.btn.btn-secondary(type="button", data-dismiss="modal", aria-label="Close") Zavrieť
+          
+  #wrapper.container-fluid
+    include header.pug
+
+    .container
+      section#home
+        h2 #[i.fas.fa-pencil-alt.text-color-blog] Blog
+        .row
+          .col-12
+            .blog-item.mb-2
+              .blog-item-body
+                h4.card-title.mb-2 Ako rýchlosť načítania stránky vplýva na mieru konverzií
+                aside.float-left.mr-2
+                  picture
+                    img.lazyload(data-src="./assets/images/OJ8XZ20.jpg", alt="Rýchlosť webu")
+                p.card-text Ak trvá tvojej stránke načítanie dlhšie ako tri sekundy, môžeš stratiť až polovicu návštevníkov.
+                p #[a(href="./blog/rychlost-nacitania-stranky-blog-1").link Prejsť na článok #[i.fas.fa-step-forward]]
+                p.clearfix
+        .row
+          .col-12
+            .blog-item.mb-2
+              .blog-item-body
+                h4.card-title.mb-2 Rýchlosť stránky: Ako ovplyvňuje SEO a ako ju zlepšiť
+                aside.float-left.mr-2
+                  picture
+                    img.lazyload(data-src="./assets/images/website-speed.jpg", alt="Rýchlosť webu")
+                p.card-text V roku 2010 google oznámil, že rýchlosť stránky bude mať vplyv na celkové umiestnenie vášho webu vo vyhľadávaní.#[br] Táto predpoveď priamo úmerne súvisí s časom, ktorý musí uživateľ čakať kým sa stránka načíta...
+                p #[a(href="./blog/ako-rychlost-ovplyvnuje-seo-blog-2").link Prejsť na článok #[i.fas.fa-step-forward]]
+                p.clearfix
+
+        //-h2 #[i.fas.fa-flag-checkered.text-color-cb] Realizované riešenia
+        //-.row
+          .col-12
+              .blog-item.mb-2
+                // img(alt="Card image cap").card-img-top
+                .blog-item-body
+                  h4.card-title.mb-2 Produktovo prezentačný web #[strong Tonap]
+                  aside.float-left.mr-2.borderless
+                    picture
+                      img.lazyload(data-src="./assets/images/tonap.png", alt="Rýchlosť webu")
+                  p.card-text Prečítajte si o riešení, ktoré sme pripravili pre spoločnosť Tonap s. r. o.
+                  p #[a(href="#").link Prejsť na článok #[i.fas.fa-step-forward]]
+                  p.clearfix
+
+    include footer.pug
+
+block scripts
+  script(src="../assets/js/codebrothers.min.js", deffer)

@@ -10,14 +10,18 @@ var mobileNav = document.querySelector(".mobile");
 var mobileNavBtn = mobileNav.querySelector(".nav-btn button");
 var mobileNavLinks = mobileNav.querySelectorAll("nav ul li a");
 
-$(document).ready(function() {
+// $(document).ready(function() {});
+
+window.onload = function () {
   mixpanel.track("Page Visit");
 
   for(var i = 0; i < typingTexts.length; i++) {
     texts.push(typingTexts[i]);
   }
 
-  startTextTyping();
+  if (document.getElementsByClassName("typingText").length > 0) {
+    startTextTyping();
+  }
 
   [].forEach.call(navLinks, function(navLink) {   
     navLink.addEventListener("click", function(e) {
@@ -51,16 +55,18 @@ $(document).ready(function() {
     }
   }, false);
 
-  window.addEventListener("scroll", function() {
-    if(shapeBlock.getBoundingClientRect().top < 200) {
-      if(textTypingInterval > 0) {
-        stopTextTyping();
+  if (shapeBlock) {
+    window.addEventListener("scroll", function() {
+      if(shapeBlock.getBoundingClientRect().top < 200) {
+        if(textTypingInterval > 0) {
+          stopTextTyping();
+        }
+      } else if(textTypingInterval === 0) {
+        startTextTyping();
       }
-    } else if(textTypingInterval === 0) {
-      startTextTyping();
-    }
-  }, false);
-});
+    }, false);
+  }
+};
 
 function changeText(param) {
   for(var i = 0; i < texts.length; i++) {

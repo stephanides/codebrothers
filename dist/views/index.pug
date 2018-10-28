@@ -12,42 +12,10 @@ block content
         .modal-body
           p
         .modal-footer.text-right
-          button.btn.btn-secondary(type="button", data-dismiss="modal") Zavrieť
+          button.btn.btn-secondary(type="button", data-dismiss="modal", aria-label="Close") Zavrieť
           
   #wrapper.container-fluid
-    header.container-fluid.position-fixed
-      .container.d-flex.justify-content-between.pt-2.pb-2
-        .desktop.justify-content-between
-          .logo
-            a.section-1(href="./#")
-              img(src="./assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
-          nav
-            ul.d-flex.align-items-center
-              li
-                a.section-2(href="#services", title="Služby") Služby
-              li
-                a.section-3(href="#ref", title="Referencie") Referencie
-              //- Hidden till time when we will have GDPR processed        
-              //-li
-                a.section-4.btn-outline(href="#contact", title="Kontaktujte nás") Kontaktujte nás
-        .mobile.d-flex.justify-content-between.w-100
-          .logo
-            a.section-1(href="./#")
-              img(src="./assets/images/icons/logo_codebrothers.svg" alt="codebrothers s. r. o.")
-          .nav-btn
-            button.btn(type="button")
-              i.fas.fa-align-right
-          nav.d-none.bg-animate
-            ul.d-flex.align-items-center
-              li
-                a.section-1(href="./#", title="codebrothers s. r. o.") Domov
-              li
-                a.section-2(href="#services", title="Služby") Služby
-              li
-                a.section-3(href="#ref", title="Referencie") Referencie
-              //- Hidden till time when we will have GDPR processed           
-              //-li
-                a.section-4(href="#contact", , title="Kontaktujte nás") Kontaktuje nás
+    include header.pug
 
     .container
       section#home.section-1
@@ -67,15 +35,15 @@ block content
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .phone.position-relative.margin-block
               picture
-                source(srcset="./assets/images/phone1.webp", alt="", type="image/webp")
-                img(src="./assets/images/phone1.png", alt="")
+                source(srcset="./assets/images/phone1.webp", alt="Codebrothers, aplikácie na mieru", type="image/webp")
+                img(src="./assets/images/phone1.png", alt="Codebrothers, aplikácie na mieru",)
             .position-absolute.shape-circle
         .row
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .position-relative.pc.margin-block
               picture
-                source(data-srcset="./assets/images/pc1.webp", alt="", type="image/webp")
-                img.lazyload(data-src="./assets/images/pc1.png", alt="")
+                source(data-srcset="./assets/images/pc1.webp", alt="Codebrothers, weby na mieru", type="image/webp")
+                img.lazyload(data-src="./assets/images/pc1.png", alt="Codebrothers, weby na mieru")
             .shape-block.position-absolute
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center
             ul.position-relative.q-list.mt-2.mb-2
@@ -95,8 +63,8 @@ block content
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .position-relative.phone-2.margin-block
               picture
-                source(data-srcset="./assets/images/phone2.webp", type="image/webp")
-                img.lazyload(data-src="./assets/images/phone2.png", alt="")
+                source(data-srcset="./assets/images/phone2.webp", alt="Codebrothers, web a aplikácia na mieru", type="image/webp")
+                img.lazyload(data-src="./assets/images/phone2.png", alt="Codebrothers, web a aplikácia na mieru")
             .shape-triangle.position-absolute
             
       section#services.section-2
@@ -131,17 +99,17 @@ block content
           .col-12.refs
            .position-relative.ref.mb-5
               picture
-                source(data-srcset="./assets/images/cw-logo.webp" type="image/webp")
-                img.lazyload(data-src="./assets/images/cw-logo.png", alt="")
+                source(data-srcset="./assets/images/cw-logo.webp", alt="Codebrothers, web a aplikácia na mieru", type="image/webp")
+                img.lazyload(data-src="./assets/images/cw-logo.png", alt="Codebrothers, web a aplikácia na mieru")
            .position-relative.ref.mb-5
               picture
-                source(data-srcset="./assets/images/bk-logo.webp" type="image/webp")
-                img.lazyload(data-src="./assets/images/bk-logo.png", alt="")
+                source(data-srcset="./assets/images/bk-logo.webp", alt="Codebrothers, web a aplikácia na mieru" type="image/webp")
+                img.lazyload(data-src="./assets/images/bk-logo.png", alt="Codebrothers, web a aplikácia na mieru")
            //-.position-relative.ref
              img(data-src="./assets/images/cw-logo.png" alt="")
 
       //- Hidden till time when we will have GDPR processed
-      //-section#contact.section-4
+      section#contact.section-4
         h3.mb-3 Zaujali sme vás? Túžite po rýchlom webe? #[strong Kontaktujte nás!]
         form#contact-form(onsubmit="submitForm(this)")
           .row
@@ -158,14 +126,7 @@ block content
               .form-row.text-center.mb-0
                 button.btn-outline.btn-large(type="submit") Kontaktovať
 
-    .container-fluid
-      footer.pt-2.pb-2.mt-0
-        .row
-          .col-6.d-flex.align-items-center
-            p.mb-0 CODEBROTHERS &copy; 2018. Všetky práva vyhradené.#[br]#[a(href="mailto:info@codebrothers.sk" title="Odoslať email") info@codebrothers.sk]
-          .col-6
-            .logo.text-right
-                img.lazyload(data-src="./assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
+    include footer.pug
 
 block scripts
-  script(src="./assets/js/codebrothers.min.js")
+  script(src="./assets/js/codebrothers.min.js", deffer)

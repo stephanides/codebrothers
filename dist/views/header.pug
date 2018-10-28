@@ -1,0 +1,41 @@
+- var activeClass = page === "blog" ? "active" : null
+
+header.container-fluid.position-fixed
+  .container.d-flex.justify-content-between.pt-2.pb-2
+    .desktop.justify-content-between
+      .logo
+        a.section-1(href="./#")
+          img(src="https://codebrothers.sk/assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
+        h1.sr-only Codebrothers pre Vás pripravia najlepšie a najrýchlejšie webové riešenia a aplikácie.
+      nav
+        ul.d-flex.align-items-center
+          li
+            a.section-2(href="./#services", title="Služby") Služby
+          li
+            a(href="/blog", title="Blog", class=activeClass) Blog
+          li
+            a.section-3(href="./#ref", title="Referencie") Referencie
+          //- Hidden till time when we will have GDPR processed
+          //-li
+            a.section-4.btn-outline(href="#contact", title="Kontaktujte nás") Kontaktujte nás
+    .mobile.d-flex.justify-content-between.w-100
+      .logo
+        a.section-1(href="./#")
+          img(src="https://codebrothers.sk/assets/images/icons/logo_codebrothers.svg" alt="codebrothers s. r. o.")
+        h2.sr-only Rýchly web aj na mobile? Jedine od codebrothers.
+      .nav-btn
+        button.btn(type="button", aria-label="codebrothers menu")
+          i.fas.fa-align-right
+      nav.d-none.bg-animate
+        ul.d-flex.align-items-center
+          li
+            a.section-1(href="./#", title="codebrothers s. r. o.") Domov
+          li
+            a.section-2(href="./#services", title="Služby") Služby
+          li
+            a(href="/blog", title="Blog") Blog
+          li
+            a.section-3(href="./#ref", title="Referencie") Referencie
+          //- Hidden till time when we will have GDPR processed           
+          //-li
+            a.section-4(href="#contact", , title="Kontaktujte nás") Kontaktuje nás
