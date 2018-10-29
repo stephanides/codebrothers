@@ -19,6 +19,8 @@ block content
 
     .container
       section#home
+        
+        //- Blog 1 - Ako rýchlosť načítania stránky vplýva na mieru konverzií
         if blogId === 1
           .row
             .col-12.picture-full-wide
@@ -28,90 +30,146 @@ block content
               h1.sr-only Codebrothers | Blog
               h2 Ako rýchlosť načítania stránky vplýva na mieru konverzií
 
-              p Je to jednoduché. Čím rýchlejšia tvoja stránka je, tým spokojnejší sú jej návštevníci. Vyladenie rýchlosti načítania tvojej stránky povedie k viditeľnému zlepšeniu užívateľskej skúsenosti z tvojho webu, miery konverzií a v neposlednom rade k zvýšeniu tvojich predajov.
+              p Ak trvá tvojej stránke načítanie dlhšie ako tri sekundy, môžeš stratiť až polovicu návštevníkov.
+              p Je to jednoduché. Čím rýchlejšia je tvoja stránka, tým spokojnejší sú jej návštevníci. Vyladenie rýchlosti načítania tvojej stránky povedie k viditeľnému zlepšeniu užívateľskej skúsenosti z tvojho webu, miery konverzií a v neposlednom rade k zvýšeniu tvojich predajov.
               p Zlepšenie doby načítania tvojej stránky môže mať prekvapivo pozitívny vplyv na celkový marketing a pozitívne reťazenie predajov tvojich produktov. Až #[strong 79%] zákazníkov, ktorí boli v minulosti nespokojní s výkonom navštívenej stránky tvrdia, že nie sú ochotní ju navštíviť znova aby na nej nakúpili.
               .buy
                 p Máš záujem o rýchle webové riešenie?#[br]Bratia v kóde z #[strong codebrothers] ti s tým veľmi radi pomôžu. #[i.fas.fa-smile-wink.text-color-react]
-                p #[button(disabled) Mám záujem]
+                p #[a(href="../#contact") Mám záujem]
               p Otázka teraz znie. Môžeme znížením pár milisekúnd pri načítaní stránky vyriešiť problém s predajom produktov na webe?
           .row
             .col-12
-              h4 Prezradí nám to nasledujúcich #[strong 9] prípadov účinku zrýchlenia načítania webových stránok.
+              h4 Prezradí nám to #[strong 9] prípadov účinku zrýchlenia načítania webových stránok.
           .row
-            .col-4
+            .col-4.position-relative
+              .badge-num 1
               h5 Predaj
               p #[strong 79%] zákazníkov, ktorí boli v minulosti nespokojní s výkonom navštívenej stránky tvrdí, že nie sú ochotní takúto stránku navštíviť znova aby na nej nakúpili.
-            .col-4
+            .col-4.position-relative
+              .badge-num 2
               h5 Mobilný používatelia
               p #[strong 64%] užívateľov očakáva načítanie stránky za menej ako #[strong 4] sekundy.
-            .col-4
+            .col-4.position-relative
+              .badge-num 3
               h5 Zákazníci
               p #[strong 47%] zákazníkov očakáva načítanie stránky do menej ako #[strong 2]. sekúnd.
           .row
             .col-12
-              p Podľa štatistík mPulse spoločnosti Akamai sa web s rýchlosťou načítania do #[strong 2.4] sekundy môže tešiť z konverzie #[strong 1.9%]. Stránke načítajúcej sa do #[strong 3.3] sekundy prepadá miera konverzie na #[strong 1.5%] a stránky s rýchlosťou načítania do #[strong 4.2] sekundy sa musia zmieriť s konverziou pod #[strong 1%]. No a weby načítajúce sa dlhšie ako #[strong 5] sekúnd nepresiahnu konverziu #[strong 0.6%].
+              p Podľa štatistík mPulse spoločnosti Akamai sa web s rýchlosťou načítania do <strong>strong 2.4</strong> sekundy môže tešiť z konverzie <strong>1.9%</strong>. Stránke načítajúcej sa do <strong>3.3</strong> sekundy prepadá miera konverzie na <strong>1.5%</strong> a stránky s rýchlosťou načítania do <strong>4.2</strong> sekundy sa musia zmieriť s konverziou pod <strong>1%</strong>. No a weby načítajúce sa dlhšie ako <strong>5</strong> sekúnd nepresiahnu konverziu <strong>0.6%</strong>.
           .row
-            .col-4
+            .col-4.position-relative
+              .badge-num 4
               h5 Rýchlosť ovplyvňuje príjmy
-              p Ak napríklad tvoja stránka vyrobí denne #[strong 100 000 €], tak zníženie načítavania tvojej stránky o #[strong jednu] jedinú sekundu ti môže pridať na príjmoch až #[strong 7000 €] denne.
-            .col-4
+              p Ak napríklad tvoja stránka vyrobí denne #[strong 100 000 €], tak zníženie načítavania tvojej stránky o #[strong 1] jedinú sekundu ti môže pridať na príjmoch až #[strong 7000 €] denne.
+            .col-4.position-relative
+              .badge-num 5
               h5 SEO
               p #[strong 1]. sekundové meškanie v načítaní stránky znamená až #[strong 11%] prepad vo výsledkoch vyhľadávania vo vyhľadávacích nástrojoch ako je Google.
-            .col-4
+            .col-4.position-relative
+              .badge-num 6
               h5 Konverzie
               p #[strong 1] sekundové meškanie v dobe načitania tvojej stránky znamená #[strong 7%] zníženie miery konverzií.
           .row
-            .col-4
+            .col-4.position-relative
+              .badge-num 7
               h5 Spoločnosť SmartFurniture
               p Zvýšila zrýchlením stránky svoju organickú návštevnosť o #[strong 20%], o #[strong 14%] zobrazenie stránky a zvýšila svoje poradie vo vyhľadávočoch o #[strong dve] poradia.
-            .col-4
+            .col-4.position-relative
+              .badge-num 8
               h5 ShopZilla
               p Rýchlejšia stránka poskytuje o  #[strong 7%] až #[strong 12%] vyššie konverzie ako pomalšia
-            .col-4
+            .col-4.position-relative
+              .badge-num 9
               h5 Amazon
               p Spomalenie stránok iba o #[strong 1] sekundu by viedlo k z níženiu ročných príjmov o #[strong 1.6] Miliardy #[strong $].
           .row
             .col-12
               .buy
-                p Ak chceš mať aj ty stránky, ktoré svojich návštevníkov dokážu ohromiť za menej ako #[strong 2] sekundy?
-                p #[button(disabled) Mám záujem]
+                p Ak chceš mať aj ty stránky, ktoré svojich návštevníkov dokážu ohromiť za menej ako #[strong 2] sekundy, neváhaj a
+                p #[a(href="../#contact") Napíš nám]
+        
+        //- Blog 2 - Rýchlosť stránky: Ako ovplyvňuje SEO a ako ju zlepšiť
         else if blogId === 2
           .row
             .col-12.picture-full-wide
               img.lazyload(data-src="../assets/images/speed-test-icon.jpg", alt="codebrothers | Blog | Rýchlosť stránky: Ako ovplyvňuje SEO a ako ju zlepšiť")
           .row
             .col-12
-              h1.sr-only Codebrothers | Blog
-              h2 Rýchlosť stránky: Ako ovplyvňuje SEO a ako ju zlepšiť
+              h1 Ako rýchlosť stránky ovplyvňuje SEO
+              h2.sr-only Codebrothers | Blog
 
-              p V roku 2010 google oznámil, že rýchlosť stránky bude mať vplyv na celkové umiestnenie vášho webu. Táto predpoveď priamo úmerne súvisí s časom, ktorý musia užívatelia čakať kým sa stránka načíta. Priemerná doba načítania e-commerce riešenia je až 7. sekúnd. Pričom by sa tento čas mal pohybovať okolo 3. sekúnd a menej.
+              p V roku 2010 google oznámil, že rýchlosť stránky bude mať vplyv na celkové umiestnenie tvojho webu vo vyhľadávači. To priamo úmerne súvisí s časom, ktorý musia užívatelia čakať, kým sa stránka načíta. Priemerná doba načítania e-commerce riešenia je až 7. sekúnd, pričom ideálny čas načítania webu by sa mal pohybovať okolo 3 sekúnd.
               .buy
-                p Chceš riešenie, ktoré sa užívateľom načíta za menej ako dve sekundy?#[br]#[i.fas.fa-people-carry.mr-1.text-color-cb]Chlapi z codebrothers ti s tým radi pomôžu.
-                p #[button(disabled) Napíš nám]
+                p My ponúkame riešenie, vďaka ktorému užívateľ načíta váš web alebo eshop za menej ako 2 sekundy.
+                p #[a(href="../#contact") Mám záujem]
+
+              h2 Vieš, že Google penalizuje pomalé stránky?
               
-              p Skutočnosťou je, že doba načítania akéhokoľvek webu má za výsledok zlú užívateľskú skúsenosť. Zlá užívateľská skúsenosť z tvojho webu priamo úmerne súvisí so stratou príjmov, ak tvoja cieľová skupina musí čakať príliš dlho na obsah, ktorý očakáva. Zákazník proste tvoj web zatvorí a skúsi sa porozhliadať inde. A rovnako závažným faktom je, že vyhľadávacie nástroje ako Google v dnešnej dobe penalizujú stránky, ktorým načítanie a zobrazenie obsahu trvá príliš dlho. Penalizované sú ako weby na desktopových, či prenosných počítačoch tak aj na mobilných zariadeniach bez výnimky. Sám Google na svojich stránkach uvádza nasledovné:
-              p #[i "Výsledok vyhľadávania pre zdroj s krátkym časom načítania v porovnaní so zdrojom s dlhšou dobou načítania môže byť propagovaný v poradí prezentácie v prospech rýchlejšieho zdroja a naopak výsledky vyhľadávania pre zdroje s dlhšou dobou načítania môžu byť znížené"].
-              p Google v podstate porovnáva tvoj web s tými konkurenčnými na základe množstva rôznych zložitých kritérií. Jednou z týchto kritérií sa poslednou dobou stala aj rýchlosť a ak je tvoj web rýchly máš oproti konkurencii pár bonusových bodov #[i.fas.fa-smile.text-color-cb]
-              .buy
+              p Pravdou je, že dlhá doba načítania webu má za následok zlú užívateľskú skúsenosť. A zlá užívateľská skúsenosť sa rovná strate príjmov. Pretože ak tvoja cieľová skupina musí na obsah čakať príliš dlho, proste z webu odíde. 
+              p Rovnako závažným dôvodom, prečo venovať pozornosť rýchlosti načítania tvojho webu je, že vyhľadávače ako Google penalizujú stránky, ktoré sa načítavajú pomaly a umiestňujú ich na nižšie priečky vo vyhľadávaní. Penalizované sú ako weby na desktopových, či prenosných počítačoch tak aj na mobilných zariadeniach bez výnimky.#[br][1]
+              p Google porovnáva tvoj web s inými, konkurenčnými na základe množstva rôznych zložitých kritérií. Jednou z týchto kritérií je už spomínaná rýchlosť. Ak je tvoj web rýchly máš oproti konkurencii pár bonusových bodov navyše - a určite aj pár zákazníkov k dobru.
+              //-.buy
                 p Máš záujem o riešenie, ktoré mimo iné predčí iné riešenia svojou rýchlosťou?#[i.fas.fa-bolt.text-color-bolt.ml-1]#[br] My v codebrothers ti takéto riešenie radi zrealizujeme.
-                p #[button(disabled) Mám záujem]
+                p #[a(href="../#contact") Mám záujem]
 
-              h3 Čo môže znižovať rýchlosť tvojho webu?
+              h2 Príčiny pomalého webu
 
-              p V nasledujúcich bodoch si predstavíme zopár takýchto #[strong "spomaľovačov"].
-              p #[strong Hosting/Server]: príliš lacný webhosting, alebo server s tými najnižšími parametrami, ktoré nám majú ušetriť pár #[strong €] nie je vždy tou najlepšou voľbou. Najme ak nášmu webu časom narastá návštevnosť a tzv. “lacné železo” vyšší nápor pripojených užívateľov už jednoduch nedokáže plynulo obslúžiť.
-              p #[strong Serverová technológia]: v dnešnej dobe už nie je  problém vybrať si z množstva technologických riešení, ktoré môžu poháňať to serverové “železo”, ktoré sme si na náš projekt prenajali, alebo zakúpili. Nie je nevyhnutné ani v sfére “Open source” ostávať pri PHP či Jave ako tomu bolo pred 10. či 15. rokmi. Dnes si môžeme vyberať aj medzi mladšími hráčmi akými sú napríklad #[strong Go Lang] či #[strong.text-color-node NodeJs] a mnohými ďalšími. Tieto technológie sú v mnoha ohľadoch rýchlejšie a zvládajú omnoho viac nezávislých pripojení a to dokonca na slabšom hardvéri ako ich vyššie spomenutí súrodenci.
-              .buy
+              p Medzi “spomaľovače” webu patrí veľa faktorov. Predstavíme ti tie najčastejšie, s ktorými sa však dá pracovať a vhodne ich upraviť tak, aby bežali ako o preteky.
+              .position-relative
+                .badge-num(style="left:-40px;") 1
+                p #[strong Pomalý hosting či server]: Príliš lacný webhosting, alebo server s tými najnižšími parametrami ti síce ušetria pár eur, ale nie sú vždy tou najlepšou voľbou, najmä ak tvojmu webu časom narastá návštevnosť. Vyšší nápor pripojených užívateľov nedokáže plynulo obslúžiť lacný hosting. Tak to proste je.
+              .position-relative
+                .badge-num(style="left:-40px;") 2
+                p #[strong Technológia servera]: V dnešnej dobe už nie je problém vybrať si z množstva technologických riešení, ktoré môžu poháňať to serverové “železo”, ktoré sme pre projekt prenajali. Pred #[strong 10] rokmi bolo nevyhnutné zotrvávať vo sfére Open Source pri #[strong PHP] alebo #[strong Jave].#[br]Dnes je ale svet IT na inej úrovni a môžeme si vyberať spomedzi modernejších hráčov ako sú #[strong Go Lang] či #[strong.text-color-node NodeJs]. Tieto technológie sú neporovnateľne rýchlejšie a zvládajú viac nezávislých pripojení, a to dokonca na slabšom hardvéri ako ich vyššie spomenutí predchodcovia.
+              //-.buy
                 p Máte problém nájsť programátorov, ktorí vám dokážu vytvoriť riešenie za pomoci technológií #[strong Go Lang], alebo #[strong.text-color-node NodeJs]#[i.fab.fa-node-js.ml-1.mr-1.text-color-node]?#[br]V codebrothers máme skúsených vývojárov, ktorí tieto technológie zbožňujú.
-                p #[button(disabled) Mám záujem]
+                p #[a(href="../#contact") Mám záujem]
+              .position-relative
+                .badge-num(style="left:-40px;") 3
+                p #[strong Veľkosť obrázkov]: Stiahneš z fotobanky, dáš na web. Bežná prax vlastníkov e-commerce riešení, ktorá sa odráža najmä na rýchlosti webu. Vhodným riešením je používať obrázky v rozlíšení, ktoré je pre web postačujúce. Uprednostňujte preto PNG a SVG formát pri obrázkoch, ktoré nemajú príliš veľa detailov, napríklad logá a ikony. Pre fotografie používajte JPG, alebo WEBP formáty.
               
-              p #[strong Veľkosť obrázkov]: je bežnou praxou používať na webe obrázky vo veľkosti, ktorú sme primárne obdržali, bez ohľadu na to či takto rozmerný obrázok alebo fotografiu naozaj potrebujeme. Používajte obrázky na webe v rozlíšení, ktoré je postačujúce a skúste striedať formáty. Rôznemu obrázku môže lepšie vyhovovať iná kompresia a formát. Uprednostňujte PNG a SVG formát pri obrázkoch, ktoré nemajú príliš veľa detailov. Pre logá a ikony. Pre fotografie použivajte JPG, alebo WEBP formáty.
-              p Príčin ktoré môžu spomaľovať tvoj web je samozrejme omnoho, omnoho viac a mnohé z nich sú dostatočne komplikované a smutnou správou je, že len málo kompetentných spoločností, či agentúr sa nimi dnes zaoberá.
-              p #[strong Codebrothers] je jednou z mála tých, ktoré k #[strong rýchlosti] webových riešení pristupujú globálne a s dôrazom na každý detail, ktorý ju ovplyvňujú.
+              p Rýchly web či eshop = viac konverzií
+              p Zhrnuli sme si, že rýchlosť tvojho webu má na svedomí hosting, staré technológie, veľkosť súborov, ktoré doň vkladáš. Ak máš aj ty už plné zuby Magenta alebo Wordpressu vyskúšaj modernejší spôsob kódovania - #[strong Go Lang] a #[strong.text-color-node NodeJS].
+              p My v #[strong codebrothers] nimi žijeme. Zver svoj web do správnych rúk.
               .buy
-                p Ak potrebuješ rýchle a kvalitné riešenie, tak neváhaj a #[a(href="#", disabled) napíš nám].
-
-
+                p Napíš nám ešte dnes, veď na rýchlosti predsa záleží.#[i.fas.fa-smile-wink.ml-1.text-color-blog]
+                p #[a(href="../#contact") Napíš nám]
+        
+        //-Tonap referencia
+        else
+          .row
+            .col-12.picture-full-wide
+              img.lazyload(data-src="../assets/images/tonap.png", alt="Tonap. Rýchly web od codebrothers")
+          .row
+            h1.sr-only Referencia codebrothers, webové riešenie Tonap
+            h2 Tonap. Rýchly web od codebrothers
+          
+          p Pre nášho klienta spoločnosť #[strong TONAP] s. r. o. sme vytvorili webovú prezentáciu spoločnosti a jej produktov. Klient sa na nás obrátil s požiadavkou na redesign celkovej identity značky a to nielen pre web, ale aj tlačové média. Jednou z požiadaviek klienta bolo dosiahnuť veľmi čistý a seriózny dojem spoločnosti, ktorá je na slovenskom trhu už #[strong 20] rokov a po tak dlhom čase je tiež aj jedinou stabilnou spoločnosťou v danom odvetví.
+          p Klienta sme prijali ako výzvu. Decentne a vkusne omladiť dve desaťročia pôsobiaceho hráča, ktorý si vytvoril klientelu zákazníkov, ktorí sú už na určité pôsobenie, prejav a komunikáciu smerom k nim zvyknutí, nie je jednoduchá úloha. Napriek tejto výzve sme sa úlohy zhostili s nadšením a chuťou priviesť do týchto konzervatívnych vôd čerstvý vietor v podobe moderného dizajnu a ešte modernejších technológií.
+          p Projekt #[strong TONAP] ako riešenie pozostáva z webovej prezentácie, ktorá okrem samotnej propagácie spoločnosti a jej produktov slúži aj ako jednoduchá e-commerce platforma pre B2B zákazníkov spoločnosti. Táto platforma je samozrejme vďaka kombinácii nášho Nginx servera a pre spoločnosť tonap na mieru “šitého” Node Js servera naozaj rýchla a web ako taký je užívateľom na mobilných zariadeniach a pod mobilným internetom načítaný už do #[srtong 1]. sekundy!
+          p Zákazníci si na tomto rýchlom #[strong e-commerce] riešení môžu pohodlne a bez zbytočného čakania objednať ktorýkoľvek z produktov pomocou jednoduchých na seba nadväzných krokov, ktoré užívateľa vedú celým procesom až k úspešnej objednávke.
+          p Objednávky sú odosielané na nami naprogramovaný #[strong.text-color-node Node Js] server do intuitívneho systému vybudovaného v prostredí #[strong.text-color-react React Js]. Objednávky sú v systéme zobrazené okamžite v reálnom čase, akonáhle zákazník odošle objednávku. Keďže sme do systému nezabudli implementovať šikovný nástroj <strong>socket.io</strong> systém na novú objednávku okamžite upozorní administrátora “notifikáciou”. Nemalo by sa tak stať, aby sa na niektorú z objednávok pozabudlo. Systém je vďaka spojeniu technológií #[strong.text-color-node Node Js] na servery, #[strong.text-color-react React Js] a <strong>socket.io</strong> na klientovi vždy aktuálny, maximálne rýchly a plynulý bez zbytočných odoziev a duplicitnému načítavaniu dát, čo uvítajú najmä administrátori prichádzajúci do systému z mobilných zariadení na mobilnom internete.
+          p Ako nám s nadšením potvrdil aj sám konateľ spoločnosti #[strong Tonap] s. r. o. pán Krisztián Bodnár:#[br]#[br]#[i “Všetko je také rýchle až mám pocit, že najpomalším člankom systému som práve ja”].#[br]#[br]A s úsmevom dodáva, že je maximálne spokojní a neľutuje, že pri budovaní nového systému zariskoval s najnovšími technológiami.
+          .buy
+            .row
+              .col
+                p Máš aj ty záujem o rýchle a kvalitné riešenie?
+                p #[a(href="../#contact") Mám záujem]
+            .col-6
+              .row
+                .col.pl-0
+                  h4 Použité technológie:
+              .row
+                .col-4.pl-0
+                  h5 Node Js #[i.fab.fa-node-js.text-color-node]
+                .col-4
+                  h5 Pug Js
+                .col-4
+                  h5 React Js #[i.fab.fa-react.text-color-react]
+          //-.buy
+            p Máš aj ty záujem o rýchle a kvalitné riešenie?
+            p #[a(href="../#contact") Mám záujem]
+          
     include footer.pug
 
 block scripts

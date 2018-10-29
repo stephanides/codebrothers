@@ -289,7 +289,7 @@ body {
       border: 1px solid $cbLightSilver;
       margin: 2rem 0;
 
-      button {
+      button, a {
         background-color: $cbLightBlue;
         border: 0 none;
         color: $cbWhite;
@@ -303,6 +303,20 @@ body {
       p {
         font-weight: 500;
       }
+    }
+    .badge-num {
+      background-color: $cbAngular;
+      color: $cbWhite;
+      position: absolute;
+      top: -5px;
+      left: -20px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   footer {
