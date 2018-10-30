@@ -19,6 +19,7 @@ $sides: (top, bottom, left, right);
 * { font-family: 'Montserrat', sans-serif; }
 
 body {
+  counter-reset: section;
   margin: 0;
   padding: 0;
   background-color: $cbWhite;
@@ -133,16 +134,16 @@ body {
           left: -32px;
           width: 24px;
           height: 24px;
-          mask: url("../images/icons/ic_help_black_24px.svg");
-          -webkit-mask: url("../images/icons/ic_help_black_24px.svg");
+          /*mask: url("../images/icons/ic_help_black_24px.svg");
+          -webkit-mask: url("../images/icons/ic_help_black_24px.svg");*/
           background-color: $cbDarkPurple;
         }
       }
       &.success {
         li {
           &:before {
-            mask: url("../images/icons/ic_offline_pin_black_24px.svg");
-            -webkit-mask: url("../images/icons/ic_offline_pin_black_24px.svg");
+            /*mask: url("../images/icons/ic_offline_pin_black_24px.svg");
+            -webkit-mask: url("../images/icons/ic_offline_pin_black_24px.svg");*/
             background-color: $cbLightBlue;
           }
         }
@@ -317,6 +318,23 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .num-list {
+      li {
+        position: relative;
+        margin-bottom: .5rem;
+
+        &:before {
+          counter-increment: section;
+          content: counter(section);
+          position: absolute;
+          left: -40px;
+          background: $cbDarkPurple;
+          width: 25px;
+          text-align: center;
+          color: #fff;
+        }
+      }
     }
   }
   footer {

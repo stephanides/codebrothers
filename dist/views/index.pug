@@ -109,8 +109,6 @@ block content
               picture
                 source(data-srcset="./assets/images/tonap-logo1.webp", alt="Tonap, web a aplikácia na mieru od codebrothers", type="image/webp")
                 img.lazyload(data-src="./assets/images/tonap-logo1.png", alt="Tonap, web a aplikácia na mieru od codebrothers")
-            //-.position-relative.ref
-             img(data-src="./assets/images/cw-logo.png" alt="")
 
       //- Hidden till time when we will have GDPR processed
       section#contact.section-4
@@ -119,13 +117,13 @@ block content
           .row
             .col-12
               .form-row.mb-3
-                //label(for="name") Uvedťe svoje meno, alebo názov firmy
+                label(for="name", style="position:absolute;left:-9999px;") Uvedťe svoje meno, alebo názov firmy
                 input#name(type="text", placeholder="Meno, alebo názov firmy", required)
               .form-row.mb-3
-                //label(for="email") Uvedťe svoj e-mail
+                label(for="email", style="position:absolute;left:-9999px;") Uvedťe svoj e-mail
                 input#email(type="email", placeholder="E-mail", required)
               .form-row.mb-5.mb-3
-                //label(for="text") Popíšte nám svoju predstavu
+                label(for="text", style="position:absolute;left:-9999px;") Popíšte nám svoju predstavu
                 textarea#text(name="", cols="30", rows="10", placeholder="Popíšte nám svoju predstavu, či nápad, ktorý chcete zrealizovať.\n\nTešíme sa na spoluprácu.", required)
               .form-row.text-center.mb-0
                 button.btn-outline.btn-large(type="submit") Kontaktovať
