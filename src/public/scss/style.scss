@@ -236,7 +236,7 @@ body {
             width: 100%;
           }
           input, textarea {
-            border: 1px solid $cbLightPurple;
+            border: 2px solid rgba(153,153,255,0.35); // 1px solid $cbLightPurple;
             background-color: $cbWhite;
             padding: .5rem .75rem;
           }

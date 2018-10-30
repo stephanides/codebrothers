@@ -82,7 +82,6 @@ export class App {
     });
 
     this.router.get('/blog/:item', (req, res) => {
-      console.log("BLOG ITEM");
       const pageNum = req.params.item.indexOf("1") > -1 ?
       1 : (
         req.params.item.indexOf("2") > -1 ?
@@ -98,6 +97,10 @@ export class App {
     
     this.router.get('/blog', (req, res) => {
       res.render('blog-list', {page:'blog'});
+    });
+
+    this.router.get('/zasady-ochrany-osobnych-udajov', (req, res) => {
+      res.render('gdpr');
     });
 
     this.app.use(emailRoute);

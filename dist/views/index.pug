@@ -97,15 +97,19 @@ block content
             h2.text-center Pristupujeme zodpovedne#[br]ku každému z našich #[strong klientov]
         .row
           .col-12.refs
-           .position-relative.ref.mb-5
+            .position-relative.ref.mb-5
+                picture
+                  source(data-srcset="./assets/images/bk-logo.webp", alt="Brewklan, web od codebrothers" type="image/webp")
+                  img.lazyload(data-src="./assets/images/bk-logo.png", alt="Brewklan, web od codebrothers")
+            .position-relative.ref.mb-5
+                picture
+                  source(data-srcset="./assets/images/cw-logo.webp", alt="Carwellness, web a aplikácia na mieru od codebrothers", type="image/webp")
+                  img.lazyload(data-src="./assets/images/cw-logo.png", alt="Carwellness, web a aplikácia na mieru od codebrothers")
+            .position-relative.ref.mb-5
               picture
-                source(data-srcset="./assets/images/cw-logo.webp", alt="Codebrothers, web a aplikácia na mieru", type="image/webp")
-                img.lazyload(data-src="./assets/images/cw-logo.png", alt="Codebrothers, web a aplikácia na mieru")
-           .position-relative.ref.mb-5
-              picture
-                source(data-srcset="./assets/images/bk-logo.webp", alt="Codebrothers, web a aplikácia na mieru" type="image/webp")
-                img.lazyload(data-src="./assets/images/bk-logo.png", alt="Codebrothers, web a aplikácia na mieru")
-           //-.position-relative.ref
+                source(data-srcset="./assets/images/tonap-logo1.webp", alt="Tonap, web a aplikácia na mieru od codebrothers", type="image/webp")
+                img.lazyload(data-src="./assets/images/tonap-logo1.png", alt="Tonap, web a aplikácia na mieru od codebrothers")
+            //-.position-relative.ref
              img(data-src="./assets/images/cw-logo.png" alt="")
 
       //- Hidden till time when we will have GDPR processed
