@@ -52,12 +52,12 @@ block content
             .col-12
               p Podľa štatistík mPulse spoločnosti Akamai sa web s rýchlosťou načítania do <strong>2.4</strong> sekundy môže tešiť z konverzie <strong>1.9%</strong>. Stránke načítajúcej sa do <strong>3.3</strong> sekundy prepadá miera konverzie na <strong>1.5%</strong> a stránky s rýchlosťou načítania do <strong>4.2</strong> sekundy sa musia zmieriť s konverziou pod <strong>1%</strong>. No a weby načítajúce sa dlhšie ako <strong>5</strong> sekúnd nepresiahnu konverziu <strong>0.6%</strong>.
               p Aj rozdiel v rýchlo načítania o #[strong 1] sekundu spraví divy s tvojim ziskom, konverziami, aj spokojnými zákazníkmi.
-          .row
-            .col-12
               .buy
                 p Ak chceš mať aj ty stránky, ktoré svojich návštevníkov dokážu ohromiť za menej ako #[strong 2] sekundy neváhaj a kontaktuj nás ešte dnes.
                 p #[a(href="../#contact") Mám záujem]
-              p [1] https://skilled.co/resources/speed-affects-website-infographic/
+
+              p #[strong Zdroje:]#[br][1] https://skilled.co/resources/speed-affects-website-infographic/
+              
         
         //- Blog 2 - Rýchlosť stránky: Ako ovplyvňuje SEO a ako ju zlepšiť
         else if blogId === 2
@@ -134,4 +134,4 @@ block content
     include footer.pug
 
 block scripts
-  script(src="../assets/js/codebrothers.min.js", deffer)
+  script(src="../assets/js/codebrothers.min.js", async)
