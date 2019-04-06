@@ -1,37 +1,26 @@
 extends layout.pug
 
 block content
-  #responseModal.modal.fade.hide(tabindex="-1", role="dialog")
-    .modal-bg
-    .modal-dialog(role="document")
-      .modal-content
-        .modal-header
-          h5.modal-title Informácia
-          button.close(type="button", data-dismiss="modal", aria-label="Close")
-            span(aria-hidden="true") &times;
-        .modal-body
-          p
-        .modal-footer.text-right
-          button.btn.btn-secondary(type="button", data-dismiss="modal", aria-label="Close") Zavrieť
-          
   #wrapper.container-fluid
     include header.pug
 
     .container
       section#home.section-1
+        h1.sr-only Codebrothers sú špecialisti na rýchly web pre e-commerce.
+        h2.sr-only Garantujeme rýchly e-shop a vyššie konverzie.
         .row
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center
             .fancy-text.position-relative
               .typingText
-                h3 Čas sú peniaze,
-                h3 preto #[strong rýchly web] zarába!#[strong.typewriter _]
+                p Čas sú peniaze,
+                p preto #[strong rýchly web] zarába!#[strong.typewriter _]
               .typingText
-                h3 Pridaj tempo svojmu webu
-                h3 a rozbehni #[strong biznis] na plné obrátky!#[strong.typewriter _]
+                p Pridaj tempo svojmu webu
+                p a rozbehni #[strong biznis] na plné obrátky!#[strong.typewriter _]
               .typingText
-                h3 Odlíš svoj web od konkurencie!
-                h3 Dopraj mu rýchle #[strong tempo]! #[strong.typewriter _]
-              //-a.btn-outline.mt-2.section-2(href="#services", title="Chcem vedieť viac") Chcem vedieť viac
+                p Odlíš svoj web od konkurencie!
+                p Dopraj mu rýchle #[strong tempo]! #[strong.typewriter _]
+              a.btn-outline.mt-2.section-2(href="./#services", title="Chcem vedieť viac") Chcem vedieť viac
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.position-relative
             .phone.position-relative.margin-block
               picture
@@ -50,11 +39,11 @@ block content
               li Aj ty stihneš skočiť na obed a späť,#[br]kým sa tvoj web načíta?
               li Máš už plné zuby wordpressu a#[br]podobných zastaraných systémov?
               li Tvoji zákazníci sú nervózni zo#[br]slimačieho tempa tvojho webu?
-              li Získaj web s rýchlosťou svetla a#[br]#[strong zvýš tempo svojho biznisu!]
+              li Získaj rýchly web a#[br]#[strong zvýš tempo svojho biznisu!]
         .row
           .col-xl-6.col-lg-6.col-md-6.col-sm-12.d-flex.align-items-center.bg-white
             ul.position-relative.q-list.success.mt-2.mb-2
-              li Získaš spoľahlivý web s rýchlosťou#[br]načítania do 1 sekundy
+              li Získaš rýchle načítanie webu #[br]do 1 sekundy
               li Stúpne počet návštevníkov#[br]na tvojom eshope
               li Preukázateľne sa ti zvýšia predaje#[br]aj o 50%
               li Znížiš mieru okamžitých obchodov#[br]z tvojho webu aspoň o 10%
@@ -129,6 +118,19 @@ block content
                 button.btn-outline.btn-large(type="submit") Kontaktovať
 
     include footer.pug
+
+  #responseModal.modal.fade.hide(tabindex="-1", role="dialog")
+    .modal-bg
+    .modal-dialog(role="document")
+      .modal-content
+        .modal-header
+          h4.modal-title Informácia
+          button.close(type="button", data-dismiss="modal", aria-label="Close")
+            span(aria-hidden="true") &times;
+        .modal-body
+          p
+        .modal-footer.text-right
+          button.btn.btn-secondary(type="button", data-dismiss="modal", aria-label="Close") Zavrieť
 
 block scripts
   script(src="./assets/js/codebrothers.min.js", async)

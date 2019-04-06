@@ -41,7 +41,7 @@ class App {
         //Serve static files from imaginary /assets directory
         //Should be managed by nginx server in production
         this.app.use('/assets', express.static(__dirname + '/../public/'));
-        this.app.set('views', path.join(__dirname, '/../views'));
+        this.app.set('views', path.join(__dirname, '../views'));
         // Set pug as default template engine
         this.app.set('view engine', 'pug');
         //this.app.locals.pretty = false; //False in production
@@ -64,21 +64,24 @@ class App {
     */
     routes() {
         this.router.get('/', (req, res) => {
-            res.render('index');
+            res.render('index', { pageLevel: 1, pageTitle: "Codebrothers - Špecialisti na rýchle webové riešenia" });
         });
         this.router.get('/blog/:item', (req, res) => {
-            const pageNum = req.params.item.indexOf("1") > -1 ?
-                1 : (req.params.item.indexOf("2") > -1 ?
+            const pageItem = req.params.item;
+            const pageNum = pageItem.indexOf("1") > -1 ?
+                1 : (pageItem.indexOf("2") > -1 ?
                 2 :
-                (req.params.item.indexOf("3") > -1 ?
+                (pageItem.indexOf("3") > -1 ?
                     3 : 1));
-            res.render('blog-item', { page: 'blog', blogId: pageNum });
+            const parsedTitle = pageItem ? pageItem.split('-blog-')[0].replace(/\-/g, ' ') : null;
+            const pageTitle = parsedTitle ? parsedTitle.charAt(0).toUpperCase() + parsedTitle.substring(1, parsedTitle.length) + ' - ' : '';
+            res.render('blog-item', { pageLevel: 3, page: 'blog', blogId: pageNum, pageTitle: `${pageTitle}Blog - Codebrothers - Špecialisti na rýchle webové riešenia` });
         });
         this.router.get('/blog', (req, res) => {
-            res.render('blog-list', { page: 'blog' });
+            res.render('blog-list', { pageLevel: 2, page: 'blog', pageTitle: 'Blog - Codebrothers - Špecialisti na rýchle webové riešenia' });
         });
         this.router.get('/zasady-ochrany-osobnych-udajov', (req, res) => {
-            res.render('gdpr');
+            res.render('gdpr', { pageLevel: 1, pageTitle: 'Zásady ochrany osobných údajov - Codebrothers - Špecialisti na rýchle webové riešenia' });
         });
         this.app.use(email_router_1.default);
         this.app.use(this.router);

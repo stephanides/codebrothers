@@ -33,7 +33,7 @@ window.onload = function () {
     navLink.addEventListener("click", function(e) {
       var el = e.target;
 
-      if($(el).closest(".mobile")) {
+      if(el.closest(".mobile")) {
         mobileNavBtn.classList.remove("active");
         mobileNavBtn.querySelector("i").classList.replace("fa-align-left", "fa-align-right");
         document.querySelector(".mobile nav").classList.replace("d-block", "d-none");
@@ -102,12 +102,10 @@ function handleLink(el) {
 
 function handleModalOff() {
   modal.classList.replace("show", "hide");
-  window.requestTimeout(function () {
+  
+  setTimeout(function () {
     modal.classList.remove("z-modal");
   }, 300);
-  /*setTimeout(function() {
-    modal.classList.remove("z-modal");
-  }, 300);*/
 }
 
 function startTextTyping() {
@@ -175,37 +173,78 @@ function stopTextTyping() {
 }
 
 function section(e) {
-  $("html, body").animate({
-    scrollTop: document.querySelector("section.section-" + e).offsetTop - document.getElementsByTagName("header")[0].offsetHeight
-  }, "slow");
+  scrollIt(document.querySelector("section.section-" + e), 600, "easeOutQuad");
 }
 
 function submitForm(e) {
   event.preventDefault();
 
-  var data = {
+  var data = JSON.stringify({
     name: e.name.value,
     email: e.email.value,
     text: e.text.value
-  };
+  });
   
-  $.ajax({
-    url: "/email/send",
-    type: "POST",
-    data: data,
-    success: function(resp) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.open("POST", "/email/send");
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
       if(modal && !modal.classList.contains("show")) {
         modal.querySelector("p").innerHTML = "Vaša správa bola úspešne odoslaná.\nČoskoro sa Vám ozveme s odpoveďou.";
         modal.classList.replace("hide", "show");
         modal.classList.add("z-modal");
       }
-    },
-    error: function(err) {
+    } else {
       if(modal && !modal.classList.contains("show")) {
         modal.querySelector("p").innerHTML = "Došlo k chybe. Vášu správa sa nepodarilo odoslať.\nSkúste neskôr prosím.";
         modal.classList.replace("hide", "show");
         modal.classList.add("z-modal");
       }
     }
-  });
+  };
+  xhr.send(data);
+}
+
+function scrollIt(destination, duration, easing, callback) {
+  var easings = {
+    easeOutQuad: function (t) {
+      return t * (2 - t);
+    }
+  };
+
+  var start = window.pageYOffset;
+  var startTime = "now" in window.performance ? performance.now() : new Date().getTime();
+
+  var documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+  var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName("body")[0].clientHeight;
+  var destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop - 90;
+  var destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+
+  if ("requestAnimationFrame" in window === false) {
+    window.scroll(0, destinationOffsetToScroll);
+    if (callback) {
+      callback();
+    }
+    return;
+  }
+
+  function scroll() {
+    var now = "now" in window.performance ? performance.now() : new Date().getTime();
+    var time = Math.min(1, ((now - startTime) / duration));
+    var timeFunction = easings[easing](time);
+    window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
+
+    if (window.pageYOffset === destinationOffsetToScroll) {
+      if (callback) {
+        callback();
+      }
+      return;
+    }
+
+    requestAnimationFrame(scroll);
+  }
+
+  scroll();
 }

@@ -1,10 +1,11 @@
 .container-fluid
   footer.pt-2.pb-2.mt-0
     .row
-      .col-6.d-flex.align-items-center
+      .col-6
         p.mb-0 CODEBROTHERS &copy; 2018. Všetky práva vyhradené.#[br]#[a(href="mailto:info@codebrothers.sk" title="Odoslať email") info@codebrothers.sk]
+        p.mb-0 #[a(href="https://www.facebook.com/codebrothers.sk/", title="Navštívte nás na facebooku", target="_blank", rel="noreferrer") #[i.fab.fa-facebook-square]]
       .col-6
         .logo.text-right
             //-a(href="https://codebrothers.sk/zasady-ochrany-osobnych-udajov")
             a(href="./zasady-ochrany-osobnych-udajov", target="_blank", title="Zásady-ochrany-osobnych-údajov").mr-2.text-color-cb Zásady ochrany osobných údajov
-            img.lazyload(data-src="https://codebrothers.sk/assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
+            img.lazyload(data-src=pageLevel < 3 ? (pageLevel < 2 ? "./assets/images/icons/logo_codebrothers.svg" : "../assets/images/icons/logo_codebrothers.svg") : "../../assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")

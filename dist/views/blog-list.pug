@@ -60,4 +60,4 @@ block content
     include footer.pug
 
 block scripts
-  script(src="../assets/js/codebrothers.min.js", async)
+  script(src=pageLevel < 3 ? (pageLevel < 2 ? "./assets/js/codebrothers.min.js" : "../assets/js/codebrothers.min.js") : "../../assets/js/codebrothers.min.js", async)

@@ -4,36 +4,37 @@ header.container-fluid.position-fixed
   .container.d-flex.justify-content-between.pt-2.pb-2
     .desktop.justify-content-between
       .logo
-        a.section-1(href="https://codebrothers.sk/")
-          img(src="https://codebrothers.sk/assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
-        h1.sr-only Codebrothers pre Vás pripravia najlepšie a najrýchlejšie webové riešenia a aplikácie.
+        a.section-1(href=pageLevel < 3 ?(pageLevel < 2 ? "./#" : "../#") : "../../#")
+          img(src=pageLevel < 3 ? (pageLevel < 2 ? "./assets/images/icons/logo_codebrothers.svg" : "../assets/images/icons/logo_codebrothers.svg") : "../../assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
       nav
         ul.d-flex.align-items-center
           li
-            a.section-2(href="https://codebrothers.sk/#services", title="Služby") Služby
+            a.section-2(
+              href=pageLevel < 3 ? (pageLevel < 2 ? "./#services" : "../#services") : "../../#services", title="Služby") Služby
           li
-            a(href="https://codebrothers.sk/blog", title="Blog", class=activeClass) Blog
+            a(
+              href=pageLevel < 3 ? (pageLevel < 2 ? "./blog" : "../blog") : "../../blog", title="Blog", class=activeClass) Blog
           li
-            a.section-3(href="https://codebrothers.sk/#ref", title="Referencie") Referencie
+            a.section-3(
+              href=pageLevel < 3 ? (pageLevel < 2 ? "./#ref" : "../#ref") : "../../#ref", title="Referencie") Referencie
           li
-            a.section-4.btn-outline(href="https://codebrothers.sk/#contact", title="Kontaktujte nás") Kontaktujte nás
+            a.section-4.btn-outline(href=pageLevel < 3 ? (pageLevel < 2 ? "./#contact" : "../#contact") : "../../#contact", title="Kontaktujte nás") Kontaktujte nás
     .mobile.d-flex.justify-content-between.w-100
       .logo
-        a.section-1(href="https://codebrothers.sk/")
-          img(src="https://codebrothers.sk/assets/images/icons/logo_codebrothers.svg" alt="codebrothers s. r. o.")
-        h2.sr-only Rýchly web aj na mobile? Jedine od codebrothers.
+        a.section-1(href=pageLevel < 3 ?(pageLevel < 2 ? "./#" : "../#") : "../../#")
+          img(src=pageLevel < 3 ? (pageLevel < 2 ? "./assets/images/icons/logo_codebrothers.svg" : "../assets/images/icons/logo_codebrothers.svg") : "../../assets/images/icons/logo_codebrothers.svg", alt="codebrothers s. r. o.")
       .nav-btn
         button.btn(type="button", aria-label="codebrothers menu")
           i.fas.fa-align-right
       nav.d-none.bg-animate
         ul.d-flex.align-items-center
           li
-            a.section-1(href="https://codebrothers.sk", title="codebrothers s. r. o.") Domov
+            a.section-1(href=pageLevel < 3 ?(pageLevel < 2 ? "./#" : "../#") : "../../#", title="codebrothers s. r. o.") Domov
           li
-            a.section-2(href="https://codebrothers.sk/#services", title="Služby") Služby
+            a.section-2(href=pageLevel < 3 ? (pageLevel < 2 ? "./#services" : "../#services") : "../../#services", title="Služby") Služby
           li
-            a(href="https://codebrothers.sk/blog", title="Blog") Blog
+            a(href=pageLevel < 3 ? (pageLevel < 2 ? "./blog" : "../blog") : "../../blog", title="Blog") Blog
           li
-            a.section-3(href="https://codebrothers.sk/#ref", title="Referencie") Referencie
+            a.section-3(href=pageLevel < 3 ? (pageLevel < 2 ? "./#ref" : "../#ref") : "../../#ref", title="Referencie") Referencie
           li
-            a.section-4(href="https://codebrothers.sk/#contact", , title="Kontaktujte nás") Kontaktuje nás
+            a.section-4(href=pageLevel < 3 ? (pageLevel < 2 ? "./#contact" : "../#contact") : "../../#contact", title="Kontaktujte nás") Kontaktuje nás
